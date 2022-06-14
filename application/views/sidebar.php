@@ -108,12 +108,12 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                         </ul>
                     </li> -->
                     <li class="menu-title">Master Data</li>
-                    <li>
+                    <!-- <li>
                         <a href="<?= base_url('Datamaster/Pegawai') ?>">
                             <i data-feather="users"></i>
                             <span> Pegawai </span>
                         </a>
-                    </li>
+                    </li> -->
                     <!-- <li>
                         <a href="<?= base_url('Datamaster/Jabatan') ?>">
                             <i data-feather="codesandbox"></i>
