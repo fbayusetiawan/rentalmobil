@@ -20,7 +20,7 @@ $no = '1';
                 <div class="media p-3">
                     <div class="media-body">
                         <span class="text-muted text-uppercase font-size-12 font-weight-bold">Jumlah Supir Aktif</span>
-                        <h2 class="mb-0 text-info"><?= $pegawai ?></h2>
+                        <h2 class="mb-0 text-info">0</h2>
                     </div>
 
                 </div>
@@ -35,7 +35,7 @@ $no = '1';
                     <div class="media-body">
                         <span class="text-muted text-uppercase font-size-12 font-weight-bold">Jumlah Mobil Tersedia</span>
                         <!-- <a href="<?= base_url('Posyandu/Bumil/New') ?>"> -->
-                        <h2 class="mb-0 text-info"><?= $prestasi ?></h2>
+                        <h2 class="mb-0 text-info"><?= $totalMobil ?></h2>
                         <!-- </a> -->
                     </div>
 

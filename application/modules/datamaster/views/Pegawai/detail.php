@@ -26,10 +26,7 @@ $no = '1';
                         <th>Nomer Induk Pegawai</th>
                         <th>: <?= $row->noIndukKepegawaian ?></th>
                     </tr>
-                    <tr>
-                        <th>Nomer Induk Kependudukan</th>
-                        <th>: <?= $row->nik ?></th>
-                    </tr>
+                    
                     <tr>
                         <th>Tempat, Tanggal Lahir</th>
                         <th>: <?= $row->tempatLahir . ',  ' . tgl_indo($row->tanggalLahir) ?></th>
@@ -38,26 +35,7 @@ $no = '1';
                         <th>Jenis Kelamin</th>
                         <th>: <?= fd_jk($row->jk) ?></th>
                     </tr>
-                    <tr>
-                        <th>Status Pegawai</th>
-                        <th>: <?= fd_kepegawaian($row->statusKepegawaian) ?></th>
-                    </tr>
-                    <!-- <tr>
-                        <th>Departemen</th>
-                        <th>: <?= $row->namaDepartemen ?></th>
-                    </tr>
-                    <tr>
-                        <th>Devisi/Unit</th>
-                        <th>: <?= $row->namaDevisi ?></th>
-                    </tr>
-                    <tr>
-                        <th>Pangkat/Golongan</th>
-                        <th>: <?= $row->namaPangkat . '/' . $row->namaGolongan ?></th>
-                    </tr>
-                    <tr> -->
-                    <th>Jabatan</th>
-                    <th>: <?= $row->namaJabatan ?></th>
-                    </tr>
+                    
                     <tr>
                         <th>Nomer WhatsApp</th>
                         <th>: <?= $row->noWa ?></th>

@@ -18,74 +18,58 @@ $id = uniqid()
         <div class="card">
             <div class="card-body">
                 <form action="<?= base_url($linkin . '/addAction') ?>" method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
-                    <input type="text" name="idPegawai" value="<?= $id ?>" hidden>
-                    
+
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">No Induk Kepegawaian </label>
-                        <input type="text" class="form-control nip" readonly value="<?= '2163' . date('dmy') . noOtomatis('helpNumber', 'helpNumber', 'pegawai') ?>" name="noIndukKepegawaian" required>
+                        <label for="validationCustom01">Nama Mobil </label>
+                        <input type="text" class="form-control" name="namaMobil" required>
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">Nama Lengkap </label>
-                        <input type="text" class="form-control" name="namaPegawai" required>
+                        <label for="validationCustom01">Pabrik Mobil </label>
+                        <input type="text" class="form-control" name="pabrikMobil" required>
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">Tempat Lahir </label>
-                        <input type="text" class="form-control" name="tempatLahir" required>
+                        <label for="validationCustom01">No Plat Mobil </label>
+                        <input type="text" class="form-control" name="noPlat" required>
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">Tanggal Lahir </label>
-                        <input type="date" class="form-control" name="tanggalLahir" required>
+                        <label for="validationCustom01">Tahun Mobil </label>
+                        <input type="date" class="form-control" name="tahunMobil" required>
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">Jenis Kelamin </label>
-                        <?= form_dropdown('jk', fd_jk(), '', 'class="form-control"') ?>
-                        <div class="invalid-feedback">
-                            Harus diisi!
-                        </div>
-                    </div>
-                    
-                    <div class="form-group mb-3">
-                        <label for="validationCustom01">Nomer WhatsApp </label>
-                        <input type="text" class="form-control wa" name="noWa" required>
+                        <label for="validationCustom01">Jumlah Kursi Mobil </label>
+                        <input type="text" class="form-control" name="jumlahKursi" required>
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">Alamat </label>
-                        <input type="text" class="form-control" name="alamat" required>
+                        <label for="validationCustom01">Warna Mobil </label>
+                        <input type="text" class="form-control" name="warnaMobil" required>
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">Username <small id="info"></small> </label>
-                        <input type="text" class="form-control" onkeyup="cekUser()" id="username" minlength="6" name="username" required>
+                        <label for="validationCustom01">Harga Sewa Mobil </label>
+                        <input type="text" class="form-control" name="hargaSewa" required>
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">Password </label>
-                        <input type="text" class="form-control" name="password" required>
-                        <div class="invalid-feedback">
-                            Harus diisi!
-                        </div>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="validationCustom01">Foto </label>
+                        <label for="validationCustom01">Foto Mobil </label>
                         <input type="file" class="form-control" name="foto" required>
                         <div class="invalid-feedback">
                             Harus diisi!

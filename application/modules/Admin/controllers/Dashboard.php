@@ -18,8 +18,8 @@ class Dashboard extends CI_Controller
     {
         $data['title'] = $this->titles;
         $data['pageTitle'] = "Data " . $this->titles;
-        $data['pegawai'] = $this->primaryModel->getPegawaiAktif();
-        $data['prestasi'] = $this->primaryModel->getBerprestasi();
+        $data['totalMobil'] = $this->primaryModel->totalMobil();
+        // $data['prestasi'] = $this->primaryModel->getBerprestasi();
 
         $this->template->load('template', $this->vn . '/list', $data);
     }

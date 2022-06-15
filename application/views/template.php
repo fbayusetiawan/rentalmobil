@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="<?= base_url() ?>assets/images/favicon.ico">
+    <link rel="shortcut icon" href="<?= base_url() ?>assets/images/logorental.png">
 
     <!-- plugins -->
     <!-- <link href="<?= base_url() ?>assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" /> -->
@@ -38,11 +38,11 @@
                 <!-- LOGO -->
                 <a href="index.html" class="navbar-brand mr-0 mr-md-2 logo">
                     <span class="logo-lg">
-                        <!-- <img src="<?= base_url() ?>assets/images/logo/logo1.png" alt="" height="50" /> -->
+                        <img src="<?= base_url() ?>assets/images/logorental.png" alt="" height="50" />
                         <span class="d-inline h5 ml-1 text-logo">CV NASIR RENTAL MOBIL BANJARMASIN</span>
                     </span>
                     <span class="logo-sm">
-                        <!-- <img src="<?= base_url() ?>assets/images/logo1.png" alt="" height="24"> -->
+                        <img src="<?= base_url() ?>assets/images/logorental.png" alt="" height="24">
                     </span>
                 </a>
 

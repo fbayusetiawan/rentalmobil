@@ -5,16 +5,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Dashboard_m extends CI_Model
 {
 
-    function getPegawaiAktif()
+    public function totalMobil()
     {
-        $this->db->where('isActive', '1');
-        return $this->db->get('pegawai')->num_rows();
+        $query = $this->db->get('mobil');
+        if ($query->num_rows() > 0) {
+            return $query->num_rows();
+        } else {
+            return 0;
+        }
     }
-
-    function getBerprestasi()
-    {
-        return $this->db->get('prestasi_detail')->num_rows();
-    }
+   
 }
 
 /* End of file */

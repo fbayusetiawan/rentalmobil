@@ -69,8 +69,8 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                     </a>
                 </li>
 
-                <!-- <?php if ($this->session->userdata('roleId') == '1') : ?>
-                    <li>
+                <?php if ($this->session->userdata('roleId') == '1') : ?>
+                    <!-- <li>
                         <a href="<?= base_url('Admin/Absen') ?>">
                             <i data-feather="book"></i>
                             <span> Rekap Absen </span>
@@ -87,7 +87,7 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                             <i data-feather="award"></i>
                             <span> Prestasi </span>
                         </a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="javascript: void(0);">
                             <i data-feather="file-text"></i>
@@ -106,20 +106,20 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                                 <a href="#m_gaji" data-toggle="modal">Rekap Gaji</a>
                             </li>
                         </ul>
-                    </li> -->
+                    </li>
                     <li class="menu-title">Master Data</li>
-                    <!-- <li>
+                    <li>
                         <a href="<?= base_url('Datamaster/Pegawai') ?>">
                             <i data-feather="users"></i>
                             <span> Pegawai </span>
                         </a>
-                    </li> -->
-                    <!-- <li>
-                        <a href="<?= base_url('Datamaster/Jabatan') ?>">
-                            <i data-feather="codesandbox"></i>
-                            <span> Jabatan </span>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('Datamaster/Mobil') ?>">
+                            <i data-feather="truck"></i>
+                            <span> Mobil </span>
                         </a>
-                    </li> -->
+                    </li>
                     <li>
                         <a href="<?= base_url('Datamaster/Users') ?>">
                             <i data-feather="user"></i>

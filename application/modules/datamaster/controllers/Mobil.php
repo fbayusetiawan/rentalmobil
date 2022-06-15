@@ -2,16 +2,16 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Pegawai extends CI_Controller
+class Mobil extends CI_Controller
 {
 
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Pegawai_m', 'primaryModel');
+        $this->load->model('Mobil_m', 'primaryModel');
     }
-    public $titles = 'Pegawai';
-    public $vn = 'Pegawai';
+    public $titles = 'Mobil';
+    public $vn = 'Mobil';
 
     public function index()
     {
@@ -69,26 +69,13 @@ class Pegawai extends CI_Controller
     function upload_foto()
     {
         $config['upload_path']          = './upload/';
-        $config['allowed_types']        = 'jpg|png';
+        $config['allowed_types']        = 'jpg|png|jpeg';
         $config['max_size']             = 1024; // imb
         $this->load->library('upload', $config);
         // proses upload
         $this->upload->do_upload('foto');
         $upload = $this->upload->data();
         return $upload['file_name'];
-    }
-
-    function cekUser()
-    {
-        $user = $_GET['user'];
-        $this->db->where('username', $user);
-        $row = $this->db->get('pegawai')->row();
-
-        if (empty($row->username)) :
-            echo "<span class='text-success'>Tersedia</span>";
-        else :
-            echo "<span class='text-danger'>Tidak Tersedia</span>";
-        endif;
     }
 }
 
