@@ -18,68 +18,51 @@ $id = uniqid()
         <div class="card">
             <div class="card-body">
                 <form action="<?= base_url($linkin . '/addAction') ?>" method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
+                    <input type="text" name="idPegawai" value="<?= $id ?>" hidden>
 
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">Nama Mobil </label>
-                        <input type="text" class="form-control" name="namaMobil" required>
+                        <label for="validationCustom01">No Identitas <small>(KTP, SIM, dll)</small> </label>
+                        <input type="text" class="form-control" name="noKtp" required>
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">Pabrik Mobil</label>
-                        <select class="form-control" name="idMerkMobil">
-                            <option value="">--- Pilih Pabrikan Mobil ---</option>
-                            <?php foreach ($merk as $merk) { ?>
-                                <option value="<?php echo $merk->idMerkMobil; ?>"><?= $merk->namaMerk ?> </option>
-                            <?php } ?>
-                        </select>
+                        <label for="validationCustom01">Nama Lengkap </label>
+                        <input type="text" class="form-control" name="namaPelanggan" required>
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">No Plat Mobil </label>
-                        <input type="text" class="form-control" name="noPlat" required>
+                        <label for="validationCustom01">Jenis Kelamin </label>
+                        <?= form_dropdown('jk', fd_jk(), '', 'class="form-control"') ?>
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">Tahun Mobil </label>
-                        <input type="date" class="form-control" name="tahunMobil" required>
+                        <label for="validationCustom01">Alamat </label>
+                        <input type="text" class="form-control" name="alamat" required>
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">Jumlah Kursi Mobil </label>
-                        <input type="text" class="form-control" name="jumlahKursi" required>
+                        <label for="validationCustom01">No. Telpon </label>
+                        <input type="text" class="form-control" name="noTelp" required>
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">Warna Mobil </label>
-                        <input type="text" class="form-control" name="warnaMobil" required>
+                        <label for="validationCustom01">Member Sejak </label>
+                        <input type="date" class="form-control" name="dateCreated" required>
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
                     </div>
-                    <div class="form-group mb-3">
-                        <label for="validationCustom01">Harga Sewa Mobil </label>
-                        <input type="text" class="form-control" name="hargaSewa" required>
-                        <div class="invalid-feedback">
-                            Harus diisi!
-                        </div>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="validationCustom01">Foto Mobil </label>
-                        <input type="file" class="form-control" name="foto" required>
-                        <div class="invalid-feedback">
-                            Harus diisi!
-                        </div>
-                    </div>
+
                     <button class="btn-sm btn btn-primary" type="submit">Simpan</button>
                     <a href="<?= base_url($linkin) ?>" class=" btn-sm btn btn-danger">Kembali</a>
                 </form>

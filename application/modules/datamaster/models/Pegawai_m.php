@@ -44,27 +44,12 @@ class Pegawai_m extends CI_Model
 
     function update($Value, $foto)
     {
-        $pass = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
 
-        if (empty($foto) && empty($pass)) :
+        if (empty($foto)) {
             $object = [
 
                 'namaPegawai' => htmlspecialchars($this->input->post('namaPegawai', TRUE)),
                 'noIndukKepegawaian' => htmlspecialchars($this->input->post('noIndukKepegawaian', TRUE)),
-                'tanggalMulaiBekerja' => htmlspecialchars($this->input->post('tanggalMulaiBekerja', TRUE)),
-                'jk' => htmlspecialchars($this->input->post('jk', TRUE)),
-                'tanggalLahir' => htmlspecialchars($this->input->post('tanggalLahir', TRUE)),
-                'tempatLahir' => htmlspecialchars($this->input->post('tempatLahir', TRUE)),
-                'noWa' => htmlspecialchars(str_replace('-', '', $this->input->post('noWa', TRUE))),
-                'alamat' => htmlspecialchars($this->input->post('alamat', TRUE)),
-                'username' => htmlspecialchars($this->input->post('username', TRUE)),
-            ];
-        elseif (empty($foto) && !empty($pass)) :
-            $object = [
-
-                'namaPegawai' => htmlspecialchars($this->input->post('namaPegawai', TRUE)),
-                'noIndukKepegawaian' => htmlspecialchars($this->input->post('noIndukKepegawaian', TRUE)),
-                'tanggalMulaiBekerja' => htmlspecialchars($this->input->post('tanggalMulaiBekerja', TRUE)),
                 'jk' => htmlspecialchars($this->input->post('jk', TRUE)),
                 'tanggalLahir' => htmlspecialchars($this->input->post('tanggalLahir', TRUE)),
                 'tempatLahir' => htmlspecialchars($this->input->post('tempatLahir', TRUE)),
@@ -72,29 +57,12 @@ class Pegawai_m extends CI_Model
                 'alamat' => htmlspecialchars($this->input->post('alamat', TRUE)),
                 'username' => htmlspecialchars($this->input->post('username', TRUE)),
                 'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
-
             ];
-        elseif (!empty($foto) && empty($pass)) :
+          }  else {
             $object = [
 
                 'namaPegawai' => htmlspecialchars($this->input->post('namaPegawai', TRUE)),
                 'noIndukKepegawaian' => htmlspecialchars($this->input->post('noIndukKepegawaian', TRUE)),
-                'tanggalMulaiBekerja' => htmlspecialchars($this->input->post('tanggalMulaiBekerja', TRUE)),
-                'jk' => htmlspecialchars($this->input->post('jk', TRUE)),
-                'tanggalLahir' => htmlspecialchars($this->input->post('tanggalLahir', TRUE)),
-                'tempatLahir' => htmlspecialchars($this->input->post('tempatLahir', TRUE)),
-                'noWa' => htmlspecialchars(str_replace('-', '', $this->input->post('noWa', TRUE))),
-                'alamat' => htmlspecialchars($this->input->post('alamat', TRUE)),
-                'username' => htmlspecialchars($this->input->post('username', TRUE)),
-                'foto' => $foto,
-
-            ];
-        else :
-            $object = [
-
-                'namaPegawai' => htmlspecialchars($this->input->post('namaPegawai', TRUE)),
-                'noIndukKepegawaian' => htmlspecialchars($this->input->post('noIndukKepegawaian', TRUE)),
-                'tanggalMulaiBekerja' => htmlspecialchars($this->input->post('tanggalMulaiBekerja', TRUE)),
                 'jk' => htmlspecialchars($this->input->post('jk', TRUE)),
                 'tanggalLahir' => htmlspecialchars($this->input->post('tanggalLahir', TRUE)),
                 'tempatLahir' => htmlspecialchars($this->input->post('tempatLahir', TRUE)),
@@ -105,7 +73,7 @@ class Pegawai_m extends CI_Model
                 'foto' => $foto,
 
             ];
-        endif;
+        }
         $this->db->where($this->pk, $Value);
         $this->db->update($this->namaTable, $object);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Berhasil Di Ubah</div>');

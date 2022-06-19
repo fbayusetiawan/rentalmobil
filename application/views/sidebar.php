@@ -26,7 +26,7 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                 <span data-feather="chevron-down"></span>
             </a>
             <div class="dropdown-menu profile-dropdown">
-                <a href="pages-profile.html" class="dropdown-item notify-item">
+                <!-- <a href="pages-profile.html" class="dropdown-item notify-item">
                     <i data-feather="user" class="icon-dual icon-xs mr-2"></i>
                     <span>My Account</span>
                 </a>
@@ -44,9 +44,9 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                 <a href="pages-lock-screen.html" class="dropdown-item notify-item">
                     <i data-feather="lock" class="icon-dual icon-xs mr-2"></i>
                     <span>Lock Screen</span>
-                </a>
+                </a> -->
 
-                <div class="dropdown-divider"></div>
+                <!-- <div class="dropdown-divider"></div> -->
 
                 <a href="<?= base_url('Auth/Logout') ?>" class="dropdown-item notify-item">
                     <i data-feather="log-out" class="icon-dual icon-xs mr-2"></i>
@@ -107,17 +107,36 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                             </li>
                         </ul>
                     </li>
+                    <li class="menu-title">Transaksi</li>
+                    <li>
+                        <a href="<?= base_url('Datamaster/Pelanggan') ?>">
+                            <i data-feather="settings"></i>
+                            <span> Transaksi </span>
+                        </a>
+                    </li>
                     <li class="menu-title">Master Data</li>
+                    <li>
+                        <a href="<?= base_url('Datamaster/Pelanggan') ?>">
+                            <i data-feather="user-plus"></i>
+                            <span> Pelanggan </span>
+                        </a>
+                    </li>
                     <li>
                         <a href="<?= base_url('Datamaster/Pegawai') ?>">
                             <i data-feather="users"></i>
-                            <span> Pegawai </span>
+                            <span> Supir </span>
                         </a>
                     </li>
                     <li>
                         <a href="<?= base_url('Datamaster/Mobil') ?>">
                             <i data-feather="truck"></i>
                             <span> Mobil </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('Datamaster/Merk') ?>">
+                            <i data-feather="key"></i>
+                            <span> Pabrik Mobil </span>
                         </a>
                     </li>
                     <li>

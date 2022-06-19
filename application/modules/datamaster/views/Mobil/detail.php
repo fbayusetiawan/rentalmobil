@@ -28,7 +28,7 @@ $no = '1';
                     </tr>
                     <tr>
                         <th>Pabrik Mobil</th>
-                        <th>: <?= $row->pabrikMobil ?></th>
+                        <th>: <?= $row->namaMerk ?></th>
                     </tr>
                     <tr>
                         <th>Tahun Mobil</th>
@@ -44,7 +44,7 @@ $no = '1';
                     </tr>
                     <tr>
                         <th>Harga Sewa</th>
-                        <th>: Rp.<?= $row->hargaSewa ?></th>
+                        <th>: Rp.<?= number_format(floatval($row->hargaSewa), 0, ',', '.')  ?></th>
                     </tr>
                     
                 </table>

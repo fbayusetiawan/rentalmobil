@@ -19,29 +19,15 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                 <form class="needs-validation" enctype="multipart/form-data" novalidate="" action="<?= base_url($linkin . '/editAction/' . $this->uri->segment(4)) ?>" method="post">
 
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">No Induk Kepegawaian </label>
-                        <input type="text" class="form-control nip" readonly value="<?= $row->noIndukKepegawaian ?>" name="noIndukKepegawaian" required>
+                        <label for="validationCustom01">No Identitas <small>(KTP, SIM, dll)</small> </label>
+                        <input type="text" class="form-control" name="noKtp" value="<?= $row->noKtp ?>" required>
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
                     </div>
                     <div class="form-group mb-3">
                         <label for="validationCustom01">Nama Lengkap </label>
-                        <input type="text" class="form-control" name="namaPegawai" value="<?= $row->namaPegawai ?>" required>
-                        <div class="invalid-feedback">
-                            Harus diisi!
-                        </div>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="validationCustom01">Tempat Lahir </label>
-                        <input type="text" class="form-control" name="tempatLahir" value="<?= $row->tempatLahir ?>" required>
-                        <div class="invalid-feedback">
-                            Harus diisi!
-                        </div>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="validationCustom01">Tanggal Lahir </label>
-                        <input type="date" class="form-control" name="tanggalLahir" value="<?= $row->tanggalLahir ?>" required>
+                        <input type="text" class="form-control" name="namaPelanggan" value="<?= $row->namaPelanggan ?>" required>
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
@@ -49,14 +35,6 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                     <div class="form-group mb-3">
                         <label for="validationCustom01">Jenis Kelamin </label>
                         <?= form_dropdown('jk', fd_jk(), '', 'class="form-control"') ?>
-                        <div class="invalid-feedback">
-                            Harus diisi!
-                        </div>
-                    </div>
-
-                    <div class="form-group mb-3">
-                        <label for="validationCustom01">Nomer WhatsApp </label>
-                        <input type="text" class="form-control wa" name="noWa" value="<?= $row->noWa ?>" required>
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
@@ -69,22 +47,8 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">Username <small id="info"></small> </label>
-                        <input type="text" class="form-control" value="<?= $row->username ?>" onkeyup="cekUser()" id="username" minlength="6" name="username" required>
-                        <div class="invalid-feedback">
-                            Harus diisi!
-                        </div>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="validationCustom01">Password </label>
-                        <input type="password" class="form-control" name="password" required>
-                        <div class="invalid-feedback">
-                            Harus diisi!
-                        </div>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="validationCustom01">Foto </label>
-                        <input type="file" class="form-control" name="foto">
+                        <label for="validationCustom01">No. Telpon </label>
+                        <input type="text" class="form-control" name="noTelp" value="<?= $row->noTelp ?>" required>
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>

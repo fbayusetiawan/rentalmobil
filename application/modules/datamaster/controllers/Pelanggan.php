@@ -2,16 +2,16 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Mobil extends CI_Controller
+class Pelanggan extends CI_Controller
 {
 
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Mobil_m', 'primaryModel');
+        $this->load->model('Pelanggan_m', 'primaryModel');
     }
-    public $titles = 'Mobil';
-    public $vn = 'Mobil';
+    public $titles = 'Pelanggan';
+    public $vn = 'Pelanggan';
 
     public function index()
     {
@@ -34,7 +34,6 @@ class Mobil extends CI_Controller
     {
         $data['title'] = $this->titles;
         $data['pageTitle'] = "Tambah Data " . $this->titles;
-        $data['merk'] = $this->primaryModel->getAllMobil();
         $this->template->load('template', $this->vn . '/add', $data);
     }
 
@@ -70,13 +69,26 @@ class Mobil extends CI_Controller
     function upload_foto()
     {
         $config['upload_path']          = './upload/';
-        $config['allowed_types']        = 'jpg|png|jpeg';
+        $config['allowed_types']        = 'jpg|png';
         $config['max_size']             = 1024; // imb
         $this->load->library('upload', $config);
         // proses upload
         $this->upload->do_upload('foto');
         $upload = $this->upload->data();
         return $upload['file_name'];
+    }
+
+    function cekUser()
+    {
+        $user = $_GET['user'];
+        $this->db->where('username', $user);
+        $row = $this->db->get('pegawai')->row();
+
+        if (empty($row->username)) :
+            echo "<span class='text-success'>Tersedia</span>";
+        else :
+            echo "<span class='text-danger'>Tidak Tersedia</span>";
+        endif;
     }
 }
 

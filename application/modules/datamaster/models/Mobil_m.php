@@ -10,11 +10,17 @@ class Mobil_m extends CI_Model
 
     function getAllData()
     {
+        $this->db->join('merk', 'merk.idMerkMObil = mobil.idMerkMObil', 'left');
         return $this->db->get($this->namaTable)->result();
+    }
+    function getAllMobil()
+    {
+        return $this->db->get('merk')->result();
     }
 
     function getDataById($Value)
     {
+        $this->db->join('merk', 'merk.idMerkMObil = mobil.idMerkMObil', 'left');
         $this->db->where($this->pk, $Value);
         return $this->db->get($this->namaTable)->row();
     }
@@ -25,7 +31,7 @@ class Mobil_m extends CI_Model
         $object = [
             'idMobil' => uniqid(),
             'namaMobil' => htmlspecialchars($this->input->post('namaMobil', TRUE)),
-            'pabrikMobil' => htmlspecialchars($this->input->post('pabrikMobil', TRUE)),
+            'idMerkMobil' => htmlspecialchars($this->input->post('idMerkMobil', TRUE)),
             'noPlat' => htmlspecialchars($this->input->post('noPlat', TRUE)),
             'tahunMobil' => htmlspecialchars($this->input->post('tahunMobil', TRUE)),
             'jumlahKursi' => htmlspecialchars($this->input->post('jumlahKursi', TRUE)),
@@ -40,36 +46,21 @@ class Mobil_m extends CI_Model
 
     function update($Value, $foto)
     {
-        $pass = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
-
-        if (empty($foto) && empty($pass)) :
+        if (empty($foto)) {
             $object = [
-
                 'namaMobil' => htmlspecialchars($this->input->post('namaMobil', TRUE)),
-                'pabrikMobil' => htmlspecialchars($this->input->post('pabrikMobil', TRUE)),
+                'idMerkMobil' => htmlspecialchars($this->input->post('idMerkMobil', TRUE)),
                 'noPlat' => htmlspecialchars($this->input->post('noPlat', TRUE)),
                 'tahunMobil' => htmlspecialchars($this->input->post('tahunMobil', TRUE)),
                 'jumlahKursi' => htmlspecialchars($this->input->post('jumlahKursi', TRUE)),
                 'warnaMobil' => htmlspecialchars($this->input->post('warnaMobil', TRUE)),
-                'hargaSewa' => htmlspecialchars($this->input->post('hargaSewa', TRUE)),
+                'hargaSewa' => htmlspecialchars($this->input->post('hargaSewa', TRUE))
             ];
-        elseif (empty($foto) && !empty($pass)) :
+        } else {
             $object = [
 
                 'namaMobil' => htmlspecialchars($this->input->post('namaMobil', TRUE)),
-                'pabrikMobil' => htmlspecialchars($this->input->post('pabrikMobil', TRUE)),
-                'noPlat' => htmlspecialchars($this->input->post('noPlat', TRUE)),
-                'tahunMobil' => htmlspecialchars($this->input->post('tahunMobil', TRUE)),
-                'jumlahKursi' => htmlspecialchars($this->input->post('jumlahKursi', TRUE)),
-                'warnaMobil' => htmlspecialchars($this->input->post('warnaMobil', TRUE)),
-                'hargaSewa' => htmlspecialchars($this->input->post('hargaSewa', TRUE)),
-
-            ];
-        elseif (!empty($foto) && empty($pass)) :
-            $object = [
-
-                'namaMobil' => htmlspecialchars($this->input->post('namaMobil', TRUE)),
-                'pabrikMobil' => htmlspecialchars($this->input->post('pabrikMobil', TRUE)),
+                'idMerkMobil' => htmlspecialchars($this->input->post('idMerkMobil', TRUE)),
                 'noPlat' => htmlspecialchars($this->input->post('noPlat', TRUE)),
                 'tahunMobil' => htmlspecialchars($this->input->post('tahunMobil', TRUE)),
                 'jumlahKursi' => htmlspecialchars($this->input->post('jumlahKursi', TRUE)),
@@ -78,24 +69,12 @@ class Mobil_m extends CI_Model
                 'foto' => $foto,
 
             ];
-        else :
-            $object = [
-
-                'namaMobil' => htmlspecialchars($this->input->post('namaMobil', TRUE)),
-                'pabrikMobil' => htmlspecialchars($this->input->post('pabrikMobil', TRUE)),
-                'noPlat' => htmlspecialchars($this->input->post('noPlat', TRUE)),
-                'tahunMobil' => htmlspecialchars($this->input->post('tahunMobil', TRUE)),
-                'jumlahKursi' => htmlspecialchars($this->input->post('jumlahKursi', TRUE)),
-                'warnaMobil' => htmlspecialchars($this->input->post('warnaMobil', TRUE)),
-                'hargaSewa' => htmlspecialchars($this->input->post('hargaSewa', TRUE)),
-                'foto' => $foto,
-
-            ];
-        endif;
+        }
         $this->db->where($this->pk, $Value);
         $this->db->update($this->namaTable, $object);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Berhasil Di Ubah</div>');
     }
+   
 
     function delete($Value)
     {

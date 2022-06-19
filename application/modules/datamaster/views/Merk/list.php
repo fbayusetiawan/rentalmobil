@@ -21,11 +21,7 @@ $no = '1';
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>No Plat Mobil</th>
-                            <th>Nama Mobil</th>
                             <th>Pabrik Mobil</th>
-                            <th>Jumlah Kursi</th>
-                            <th>Warna</th>
                             <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -33,16 +29,12 @@ $no = '1';
                         <?php foreach ($data as $row) : ?>
                             <tr>
                                 <td width="50"><?= $no++ ?></td>
-                                <td style="width: 100;"><?= $row->noPlat ?></td>
-                                <td style="width: 100;"><?= $row->namaMobil ?></td>
                                 <td style="width: 100;"><?= $row->namaMerk ?></td>
-                                <td style="width: 100;"><?= $row->jumlahKursi ?></td>
-                                <td style="width: 100;"><?= $row->warnaMobil ?></td>
                                 <td width="100" class="text-center">
                                     <div class="btn-group mb-0">
-                                        <a href="<?= base_url($linkin . '/edit/' . $row->idMobil) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="Edit"><i class="uil uil-edit"></i></a>
-                                        <a href="<?= base_url($linkin . '/detail/' . $row->idMobil) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="detail"><i class="uil uil-eye"></i></a>
-                                        <a href="<?= base_url($linkin . '/delete/' . $row->idMobil) ?>" id="<?= $row->namaMobil ?>" class="delete-data btn btn-info btn-sm" data-toggle="tooltip" title="Hapus"><i class="uil uil-trash-alt"></i></a>
+                                        <a href="<?= base_url($linkin . '/edit/' . $row->idMerkMobil) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="Edit"><i class="uil uil-edit"></i></a>
+                                        <!-- <a href="<?= base_url($linkin . '/detail/' . $row->idMerkMobil) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="detail"><i class="uil uil-eye"></i></a> -->
+                                        <a href="<?= base_url($linkin . '/delete/' . $row->idMerkMobil) ?>" id="<?= $row->namaMerk ?>" class="delete-data btn btn-info btn-sm" data-toggle="tooltip" title="Hapus"><i class="uil uil-trash-alt"></i></a>
                                     </div>
                                 </td>
                             </tr>
