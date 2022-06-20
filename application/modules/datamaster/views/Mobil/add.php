@@ -80,6 +80,18 @@ $id = uniqid()
                             Harus diisi!
                         </div>
                     </div>
+                    <div class="form-group mb-3">
+                        <label class="col col-form-label">Full AC</label>
+                        <?= form_dropdown('ac', array('0' => 'Tidak Tersedia', '1' => 'Tersedia'), '', 'class="form-control"'); ?>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="col col-form-label">Status Mobil</label>
+                        <?= form_dropdown('IsActive', array('0' => 'Tidak Tersedia', '1' =>'Tersedia', '2' => 'Telah Dirental'), '', 'class="form-control"'); ?>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="col col-form-label">Lepas Kunci</label>
+                        <?= form_dropdown('keyCar', array('0' => 'Tidak', '1' =>'Ya'), '', 'class="form-control"'); ?>
+                    </div>
                     <button class="btn-sm btn btn-primary" type="submit">Simpan</button>
                     <a href="<?= base_url($linkin) ?>" class=" btn-sm btn btn-danger">Kembali</a>
                 </form>

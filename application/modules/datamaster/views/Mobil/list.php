@@ -21,11 +21,12 @@ $no = '1';
                     <thead>
                         <tr>
                             <th>No</th>
+                            <th>Gambar Mobil</th>
                             <th>No Plat Mobil</th>
                             <th>Nama Mobil</th>
                             <th>Pabrik Mobil</th>
                             <th>Jumlah Kursi</th>
-                            <th>Warna</th>
+                            <th>Status</th>
                             <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -33,11 +34,15 @@ $no = '1';
                         <?php foreach ($data as $row) : ?>
                             <tr>
                                 <td width="50"><?= $no++ ?></td>
+                                <td>
+                                    <img src="<?= base_url('upload/' . $row->foto) ?>" width="100px" alt="">
+                                </td>
                                 <td style="width: 100;"><?= $row->noPlat ?></td>
                                 <td style="width: 100;"><?= $row->namaMobil ?></td>
                                 <td style="width: 100;"><?= $row->namaMerk ?></td>
                                 <td style="width: 100;"><?= $row->jumlahKursi ?></td>
-                                <td style="width: 100;"><?= $row->warnaMobil ?></td>
+                                <td style="width: 100;"><?= $row->isActive == '1' ? '<span class="badge badge-success">Tersedia</span>' : '<span class="badge badge-danger">Dirental</span>' ?></td>
+                                
                                 <td width="100" class="text-center">
                                     <div class="btn-group mb-0">
                                         <a href="<?= base_url($linkin . '/edit/' . $row->idMobil) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="Edit"><i class="uil uil-edit"></i></a>

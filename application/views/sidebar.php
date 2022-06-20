@@ -88,7 +88,7 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                             <span> Prestasi </span>
                         </a>
                     </li> -->
-                    <li>
+                    <!-- <li>
                         <a href="javascript: void(0);">
                             <i data-feather="file-text"></i>
                             <span> Laporan </span>
@@ -106,10 +106,10 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                                 <a href="#m_gaji" data-toggle="modal">Rekap Gaji</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li class="menu-title">Transaksi</li>
                     <li>
-                        <a href="<?= base_url('Datamaster/Pelanggan') ?>">
+                        <a href="<?= base_url('Datamaster/Transaksi') ?>">
                             <i data-feather="settings"></i>
                             <span> Transaksi </span>
                         </a>

@@ -32,7 +32,7 @@ $no = '1';
                     </tr>
                     <tr>
                         <th>Tahun Mobil</th>
-                        <th>: <?= tgl_indo($row->tahunMobil) ?></th>
+                        <th>: <?= $row->tahunMobil ?></th>
                     </tr>
                     <tr>
                         <th>Jumlah Kursi Mobil</th>

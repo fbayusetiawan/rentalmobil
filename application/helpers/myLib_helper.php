@@ -268,3 +268,10 @@ function get_rupiah($angka)
     $hasil_rupiah = number_format($angka, 0, ',', '.');
     return $hasil_rupiah;
 }
+
+function pelanggan()
+{
+    $ci = &get_instance();
+    $data = $ci->db->get('pelanggan')->result();
+    return $data;
+}
