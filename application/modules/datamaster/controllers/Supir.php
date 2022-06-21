@@ -2,16 +2,16 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Pegawai extends CI_Controller
+class Supir extends CI_Controller
 {
 
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Pegawai_m', 'primaryModel');
+        $this->load->model('Supir_m', 'primaryModel');
     }
-    public $titles = 'Pegawai';
-    public $vn = 'Pegawai';
+    public $titles = 'Supir';
+    public $vn = 'Supir';
 
     public function index()
     {

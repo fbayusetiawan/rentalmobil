@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Pegawai_m extends CI_Model
+class Supir_m extends CI_Model
 {
 
     public $namaTable = 'pegawai';
