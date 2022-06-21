@@ -50,13 +50,13 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
 
                 <?php if ($this->session->userdata('roleId') == '1') : ?>
             
-                    <li class="menu-title">Transaksi</li>
+                    <!-- <li class="menu-title">Transaksi</li>
                     <li>
                         <a href="<?= base_url('Datamaster/Transaksi') ?>">
                             <i data-feather="settings"></i>
                             <span> Transaksi </span>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="menu-title">Master Data</li>
                     <li>
                         <a href="<?= base_url('Datamaster/Pelanggan') ?>">
