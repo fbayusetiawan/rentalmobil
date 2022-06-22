@@ -43,6 +43,10 @@ $no = '1';
                         <th>: <?= $row->warnaMobil ?></th>
                     </tr>
                     <tr>
+                        <th>Fasilitas AC</th>
+                        <th>: <?= fd_ac($row->ac) ?></th>
+                    </tr>
+                    <tr>
                         <th>Harga Sewa</th>
                         <th>: Rp.<?= number_format(floatval($row->hargaSewa), 0, ',', '.')  ?></th>
                     </tr>

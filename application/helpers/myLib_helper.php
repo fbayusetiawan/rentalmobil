@@ -191,6 +191,19 @@ function fd_role($val = null)
     endif;
 }
 
+function fd_ac($val = null)
+{
+    $option = [
+        '1' => 'Full AC',
+        '2' => 'Tidak ada AC',
+    ];
+    if (empty($val)) :
+        return $option;
+    else :
+        return $option[$val];
+    endif;
+}
+
 function bulanIndo($val = null)
 {
     $option = [

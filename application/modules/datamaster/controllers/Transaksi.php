@@ -83,14 +83,18 @@ class Transaksi extends CI_Controller
     {
         $d = $_GET['d'];
         $this->db->where('idMobil', $d);
-        // $this->db->join('merk', 'merk.idMerk = mobil.idMerk', 'left');
+        $this->db->join('merk', 'merk.idMerkMobil = mobil.idMerkMobil', 'left');
+               
         $data = $this->db->get('mobil')->result();
         echo '<div class="col-md-6 mt-3">';
         // echo '<label for="validationCustom01">Devisi </label>';
         echo '<figure class="figure">';
         foreach ($data as $mobil) :
         echo '<img src="' . base_url() . 'upload/'. $mobil->foto .' " class="figure-img img-fluid rounded" width="500px" alt="...">';
-        echo '<figcaption class="figure-caption">A caption for the above image.</figcaption>';
+        echo '<figcaption class="figure-caption">Nama Mobil : '. $mobil->namaMerk .' '. $mobil->namaMobil .'</figcaption>';
+        echo '<figcaption class="figure-caption">No Plat : '. $mobil->noPlat .'</figcaption>';
+        echo '<figcaption class="figure-caption">Tahun : '. $mobil->tahunMobil .'</figcaption>';
+        echo '<figcaption class="figure-caption">AC : '. fd_ac($mobil->ac) .'</figcaption>';
         endforeach;
         echo '</figure>';
         // echo '<select name="idDevisi"  required class="form-control">';

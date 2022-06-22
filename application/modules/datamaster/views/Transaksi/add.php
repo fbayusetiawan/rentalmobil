@@ -66,6 +66,20 @@ $id = uniqid()
                             Harus diisi!
                         </div>
                     </div>
+                    <div class="col-md-4 mt-3">
+                        <label for="validationCustom01">Harga Sewa</label>
+                        <input type="number" class="form-control" name="harga" required>
+                        <div class="invalid-feedback">
+                            Harus diisi!
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <label for="validationCustom01">Lokasi</label>
+                        <input type="number" class="form-control" name="lokasi" required>
+                        <div class="invalid-feedback">
+                            Harus diisi!
+                        </div>
+                    </div>
 
                     <button class="btn btn-primary col-md-12 mt-3" type="submit">Simpan</button>
                     <a href="<?= base_url($linkin) ?>" class="btn btn-danger col-md-12 mt-1">Kembali</a>
