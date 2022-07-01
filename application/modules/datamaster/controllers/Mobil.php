@@ -24,7 +24,6 @@ class Mobil extends CI_Controller
 
     public function detail()
     {
-
         $data['row'] =  $this->primaryModel->getDataById($this->uri->segment(4));
         $data['title'] = $this->titles;
         $this->template->load('template', $this->vn . '/detail', $data);
@@ -53,11 +52,27 @@ class Mobil extends CI_Controller
         $this->template->load('template', $this->vn . '/edit', $data);
     }
 
+    function service()
+    {
+        $data['title'] = $this->titles;
+        $data['pageTitle'] = "Service " . $this->titles;
+        $id = $this->uri->segment(4);
+        $data['row'] = $this->primaryModel->getDataById($id);
+        $this->template->load('template', $this->vn . '/service', $data);
+    }
+
     function editAction()
     {
         $id = $this->uri->segment(4);
         $this->primaryModel->update($id, $this->upload_foto());
         redirect('datamaster/' . $this->vn);
+    }
+
+    function serviceAction()
+    {
+        $id = $this->uri->segment(4);
+        $this->primaryModel->saveService($id);
+        redirect('Admin/Service');
     }
 
     function delete()

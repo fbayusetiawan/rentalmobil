@@ -79,6 +79,11 @@
                         </div> <!-- end card-body -->
                     </div>
                     <!-- end card -->
+                    <div class="row mt-3">
+                        <div class="col-12 text-center">
+                            <p class="text-muted">Tidak Punya Akun? <a href="<?= base_url('Auth/Register') ?>" class="text-primary font-weight-bold ml-1">Klik Daftar</a></p>
+                        </div> <!-- end col -->
+                    </div>
 
                 </div> <!-- end col -->
             </div>

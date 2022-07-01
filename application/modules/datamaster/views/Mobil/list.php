@@ -41,13 +41,14 @@ $no = '1';
                                 <td style="width: 100;"><?= $row->namaMobil ?></td>
                                 <td style="width: 100;"><?= $row->namaMerk ?></td>
                                 <td style="width: 100;"><?= $row->jumlahKursi ?></td>
-                                <td style="width: 100;"><?= $row->isActive == '1' ? '<span class="badge badge-success">Tersedia</span>' : '<span class="badge badge-danger">Dirental</span>' ?></td>
-                                
+                                <td style="width: 100;"><?= $row->isActive == '0' ? '<span class="badge badge-success">Tersedia</span>' : '<span class="badge badge-danger">Dirental</span>' ?></td>
+
                                 <td width="100" class="text-center">
                                     <div class="btn-group mb-0">
-                                        <a href="<?= base_url($linkin . '/edit/' . $row->idMobil) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="Edit"><i class="uil uil-edit"></i></a>
+                                        <a href="<?= base_url($linkin . '/edit/' . $row->idMobil) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="edit"><i class="uil uil-edit"></i></a>
                                         <a href="<?= base_url($linkin . '/detail/' . $row->idMobil) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="detail"><i class="uil uil-eye"></i></a>
-                                        <a href="<?= base_url($linkin . '/delete/' . $row->idMobil) ?>" id="<?= $row->namaMobil ?>" class="delete-data btn btn-info btn-sm" data-toggle="tooltip" title="Hapus"><i class="uil uil-trash-alt"></i></a>
+                                        <a href="<?= base_url($linkin . '/service/' . $row->idMobil) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="service"><i class="uil uil-clipboard"></i></a>
+                                        <a href="<?= base_url($linkin . '/delete/' . $row->idMobil) ?>" id="<?= $row->namaMobil ?>" class="delete-data btn btn-info btn-sm" data-toggle="tooltip" title="hapus"><i class="uil uil-trash-alt"></i></a>
                                     </div>
                                 </td>
                             </tr>

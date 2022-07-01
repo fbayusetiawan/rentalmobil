@@ -23,7 +23,9 @@ $no = '1';
                             <th>No</th>
                             <th>No Identitas (KTP/SIM)</th>
                             <th>Nama Lengkap</th>
+                            <th>Username</th>
                             <th>No Telpon</th>
+                            <th>Member Sejak</th>
                             <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -33,7 +35,9 @@ $no = '1';
                                 <td width="50"><?= $no++ ?></td>
                                 <td style="width: 100;"><?= $row->noKtp ?></td>
                                 <td style="width: 100;"><?= $row->namaPelanggan ?></td>
+                                <td style="width: 100;"><?= $row->username ?></td>
                                 <td style="width: 100;"><?= $row->noTelp ?></td>
+                                <td><?= date('d F Y', $row->dateCreated) ?></td>
                                 <td width="100" class="text-center">
                                     <div class="btn-group mb-0">
                                         <a href="<?= base_url($linkin . '/edit/' . $row->idPelanggan) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="Edit"><i class="uil uil-edit"></i></a>

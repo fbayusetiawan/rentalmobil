@@ -21,15 +21,20 @@ $no = '1';
                     <tr>
                         <th width="25%">No. Identitas</th>
                         <th>: <?= $row->noKtp ?></th>
-                    </tr>                    
+                    </tr>
                     <tr>
                         <th width="25%">Nama Lengkap</th>
                         <th>: <?= $row->namaPelanggan ?></th>
-                    </tr>                    
-                    <tr>
-                        <th>Member Sejak</th>
-                        <th>: <?= tgl_indo($row->dateCreated) ?></th>
                     </tr>
+                    <tr>
+                        <th width="25%">Username</th>
+                        <th>: <?= $row->username ?></th>
+                    </tr>
+                    <tr>
+                        <th width="25%">Password</th>
+                        <th>: <?= $row->keyPas ?></th>
+                    </tr>
+
                     <tr>
                         <th>Jenis Kelamin</th>
                         <th>: <?= fd_jk($row->jk) ?></th>
@@ -41,6 +46,10 @@ $no = '1';
                     <tr>
                         <th>Alamat</th>
                         <th>: <?= $row->alamat ?></th>
+                    </tr>
+                    <tr>
+                        <th>Member Sejak</th>
+                        <th>: <?= date('d F Y', $row->dateCreated) ?></th>
                     </tr>
                 </table>
 

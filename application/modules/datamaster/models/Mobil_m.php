@@ -13,6 +13,7 @@ class Mobil_m extends CI_Model
         $this->db->join('merk', 'merk.idMerkMObil = mobil.idMerkMObil', 'left');
         return $this->db->get($this->namaTable)->result();
     }
+    
     function getAllMobil()
     {
         return $this->db->get('merk')->result();
@@ -25,6 +26,18 @@ class Mobil_m extends CI_Model
         return $this->db->get($this->namaTable)->row();
     }
 
+    function saveService()
+    {
+        $object = [
+            'idMobil' => htmlspecialchars($this->input->post('idMobil', TRUE)),
+            'keterangan' => htmlspecialchars($this->input->post('keterangan', TRUE)),
+            'tanggalService' => htmlspecialchars($this->input->post('tanggalService', TRUE)),
+            'biayaService' => htmlspecialchars($this->input->post('biayaService', TRUE)),
+            'status' => '1'
+        ];
+        $this->db->insert('service', $object);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Servis Disimpan</div>');
+    }
 
     function save($foto)
     {

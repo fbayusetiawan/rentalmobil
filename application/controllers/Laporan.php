@@ -11,61 +11,25 @@ class Laporan extends CI_Controller
         $this->load->model('laporan_m', 'primaryModel');
     }
 
-
-    function absen()
+    function mobil()
     {
-        $bulan = $this->input->post('bulan');
-        $data['bulan'] = $bulan;
-        $data['data'] = $this->primaryModel->absensi($bulan);
-        $this->load->view('laporan/absen', $data);
+        $data['data'] = $this->primaryModel->mobil();
+        $this->load->view('laporan/mobil', $data);
     }
 
-    function cuti()
+    function supir()
     {
-        $dari = $this->input->post('dari');
-        $sampai = $this->input->post('sampai');
-        $data['data'] = $this->primaryModel->cuti($dari, $sampai);
-        $this->load->view('laporan/cuti', $data);
+        $data['data'] = $this->primaryModel->supir();
+        $this->load->view('laporan/supir', $data);
     }
 
-    function naikpangkat()
+    function pelanggan()
     {
-        $dari = $this->input->post('dari');
-        $sampai = $this->input->post('sampai');
-        $data['data'] = $this->primaryModel->naikpangkat($dari, $sampai);
-        $this->load->view('laporan/naikpangkat', $data);
-    }
-
-    function prestasi()
-    {
-        $bulan = $this->input->post('bulan');
-        $data['bulan'] = $bulan;
-        $data['data'] = $this->primaryModel->prestasi($bulan);
-        $this->load->view('laporan/prestasi', $data);
-    }
-
-    function mutasi()
-    {
-        $dari = $this->input->post('dari');
-        $sampai = $this->input->post('sampai');
-        $data['data'] = $this->primaryModel->mutasi($dari, $sampai);
-        $this->load->view('laporan/mutasi', $data);
-    }
-
-    function teguran()
-    {
-        $dari = $this->input->post('dari');
-        $sampai = $this->input->post('sampai');
-        $data['data'] = $this->primaryModel->teguran($dari, $sampai);
-        $this->load->view('laporan/teguran', $data);
-    }
-
-    function gaji()
-    {
-        $bulan = $this->input->post('bulan');
-        $data['bulan'] = $bulan;
-        $data['data'] = $this->primaryModel->gaji($bulan);
-        $this->load->view('laporan/gaji', $data);
+        // $dari = $this->input->post('dari');
+        // $sampai = $this->input->post('sampai');
+        // $data['data'] = $this->primaryModel->pelanggan($dari, $sampai);
+        $data['data'] = $this->primaryModel->pelanggan();
+        $this->load->view('laporan/pelanggan', $data);
     }
 }
 

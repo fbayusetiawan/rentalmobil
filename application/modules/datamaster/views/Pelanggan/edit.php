@@ -33,6 +33,27 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                         </div>
                     </div>
                     <div class="form-group mb-3">
+                        <label for="validationCustom01">Username </label>
+                        <input type="text" class="form-control" name="username" value="<?= $row->username ?>" required>
+                        <div class="invalid-feedback">
+                            Harus diisi!
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="validationCustom01">Password </label>
+                        <input type="password" class="form-control" name="password" required>
+                        <div class="invalid-feedback">
+                            Harus diisi!
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="validationCustom01">Ulangi Password </label>
+                        <input type="text" class="form-control" name="keyPas" required>
+                        <div class="invalid-feedback">
+                            Harus diisi!
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
                         <label for="validationCustom01">Jenis Kelamin </label>
                         <?= form_dropdown('jk', fd_jk(), '', 'class="form-control"') ?>
                         <div class="invalid-feedback">
@@ -60,28 +81,3 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
         </div>
     </div>
 </div>
-<script>
-    function getDevisi() {
-        var d = $("#departemen").val()
-        $.ajax({
-            type: 'Get',
-            url: '<?= base_url($linkin . "/getDevisi") ?>',
-            data: 'd=' + d,
-            success: function(data) {
-                $('#devisi').html(data)
-            }
-        })
-    }
-
-    function cekUser() {
-        var user = $("#username").val();
-        $.ajax({
-            type: 'GET',
-            url: '<?= base_url("datamaster/Pegawai/cekUser") ?>',
-            data: "user=" + user,
-            success: function(data) {
-                $('#info').html(data)
-            }
-        })
-    }
-</script>

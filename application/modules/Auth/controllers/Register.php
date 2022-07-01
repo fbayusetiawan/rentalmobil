@@ -8,7 +8,7 @@ class Register extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('register_m');
+        $this->load->model('Register_m', 'primaryModel');
     }
 
 
@@ -19,7 +19,7 @@ class Register extends CI_Controller
 
     public function add_action()
     {
-        $this->register_m->insert();
+        $this->primaryModel->savePelanggan();
         redirect('auth/login');
     }
 }

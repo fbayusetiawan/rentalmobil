@@ -52,13 +52,6 @@ $id = uniqid()
                             Harus diisi!
                         </div>
                     </div>
-                    <!-- <div class="form-group mb-3">
-                        <label for="validationCustom01">Tahun Mobil </label>
-                        <input type="date" class="form-control" name="tahunMobil" required>
-                        <div class="invalid-feedback">
-                            Harus diisi!
-                        </div>
-                    </div> -->
                     <div class="form-group mb-3">
                         <label for="validationCustom01">Jumlah Kursi Mobil </label>
                         <input type="text" class="form-control" name="jumlahKursi" required>
@@ -87,7 +80,7 @@ $id = uniqid()
                     </div>
                     <div class="form-group mb-3">
                         <label class="col col-form-label">Status Mobil</label>
-                        <?= form_dropdown('IsActive', array('0' => 'Tidak Tersedia', '1' => 'Tersedia', '2' => 'Telah Dirental'), '', 'class="form-control"'); ?>
+                        <?= form_dropdown('IsActive', array('0' => 'Tersedia', '1' => 'Tidak Tersedia'), '', 'class="form-control"'); ?>
                     </div>
                     <div class="form-group mb-3">
                         <label class="col col-form-label">Lepas Kunci</label>
