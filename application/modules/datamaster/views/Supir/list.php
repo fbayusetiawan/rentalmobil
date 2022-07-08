@@ -24,6 +24,7 @@ $no = '1';
                             <th>NIK</th>
                             <th>Nama Lengkap</th>
                             <th>Jenis Kelamin</th>
+                            <th>Status</th>
                             <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
@@ -34,6 +35,7 @@ $no = '1';
                                 <td style="width: 100;"><?= $row->noIndukKepegawaian ?></td>
                                 <td style="width: 100;"><?= $row->namaPegawai ?></td>
                                 <td style="width: 100;"><?= fd_jk($row->jk) ?></td>
+                                <td style="width: 100;"><?= $row->isActive == '0' ? '<span class="badge badge-success">Available</span>' : '<span class="badge badge-danger">Busy</span>' ?></td>
                                 <td width="100" class="text-center">
                                     <div class="btn-group mb-0">
                                         <a href="<?= base_url($linkin . '/edit/' . $row->idPegawai) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="Edit"><i class="uil uil-edit"></i></a>

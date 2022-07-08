@@ -68,7 +68,7 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                             Harus diisi!
                         </div>
                     </div>
-                    <div class="form-group mb-3">
+                    <!-- <div class="form-group mb-3">
                         <label for="validationCustom01">Username <small id="info"></small> </label>
                         <input type="text" class="form-control" value="<?= $row->username ?>" onkeyup="cekUser()" id="username" minlength="6" name="username" required>
                         <div class="invalid-feedback">
@@ -81,7 +81,7 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
-                    </div>
+                    </div> -->
                     <div class="form-group mb-3">
                         <label for="validationCustom01">Foto </label>
                         <input type="file" class="form-control" name="foto">

@@ -19,7 +19,7 @@ class Register_m extends CI_Model
     public function getDataByPegawai($Value)
     {
         $this->db->where('username', $Value);
-        return $this->db->get('pegawai')->row();
+        return $this->db->get('pelanggan')->row();
     }
 
     public function savePelanggan()
@@ -33,9 +33,11 @@ class Register_m extends CI_Model
             'noKtp' => htmlspecialchars($this->input->post('noKtp', TRUE)),
             'namaPelanggan' => htmlspecialchars($this->input->post('namaPelanggan', TRUE)),
             'jk' => htmlspecialchars($this->input->post('jk', TRUE)),
+            'domisili' => htmlspecialchars($this->input->post('domisili', TRUE)),
             'alamat' => htmlspecialchars($this->input->post('alamat', TRUE)),
             'noTelp' => htmlspecialchars($this->input->post('noTelp', TRUE)),
             'dateCreated' => time(),
+            'roleId' => '3',
             'isActive' => '1'
         ];
         $this->db->insert($this->namaTable, $object);

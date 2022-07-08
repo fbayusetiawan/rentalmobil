@@ -21,7 +21,7 @@ $id = uniqid()
                     <input type="text" name="idPegawai" value="<?= $id ?>" hidden>
                     
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">No Induk Kepegawaian </label>
+                        <label for="validationCustom01">No Induk Pegawai/Supir </label>
                         <input type="text" class="form-control nip" readonly value="<?= '2163' . date('dmy') . noOtomatis('helpNumber', 'helpNumber', 'pegawai') ?>" name="noIndukKepegawaian" required>
                         <div class="invalid-feedback">
                             Harus diisi!
@@ -70,7 +70,7 @@ $id = uniqid()
                             Harus diisi!
                         </div>
                     </div>
-                    <div class="form-group mb-3">
+                    <!-- <div class="form-group mb-3">
                         <label for="validationCustom01">Username <small id="info"></small> </label>
                         <input type="text" class="form-control" onkeyup="cekUser()" id="username" minlength="6" name="username" required>
                         <div class="invalid-feedback">
@@ -83,7 +83,7 @@ $id = uniqid()
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
-                    </div>
+                    </div> -->
                     <div class="form-group mb-3">
                         <label for="validationCustom01">Foto </label>
                         <input type="file" class="form-control" name="foto" required>

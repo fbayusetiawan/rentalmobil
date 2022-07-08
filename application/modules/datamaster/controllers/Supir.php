@@ -69,8 +69,8 @@ class Supir extends CI_Controller
     function upload_foto()
     {
         $config['upload_path']          = './upload/';
-        $config['allowed_types']        = 'jpg|png';
-        $config['max_size']             = 1024; // imb
+        $config['allowed_types']        = 'jpg|png|jpeg';
+        $config['max_size']             = 3024; // imb
         $this->load->library('upload', $config);
         // proses upload
         $this->upload->do_upload('foto');

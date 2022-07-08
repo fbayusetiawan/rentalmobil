@@ -18,6 +18,11 @@ class Login extends CI_Controller
         $this->load->view('login/list');
     }
 
+    public function index1()
+    {
+        $this->load->view('hdepan/list');
+    }
+
     public function logon()
     {
         $username = $this->input->post('user', TRUE);
@@ -59,15 +64,15 @@ class Login extends CI_Controller
                     elseif ($userData->roleId == 3) :
 
                         $data = [
-                            'idUser' => $userData->idPegawai,
-                            'namaLengkap' => $userData->namaPegawai,
-                            'noWa' => $userData->noWa,
+                            'idPelanggan' => $userData->idPelanggan,
+                            'namaLengkap' => $userData->namaPelanggan,
+                            'noTelp' => $userData->noTelp,
                             'username' => $userData->username,
                             'foto' => $userData->foto,
                             'roleId' => $userData->roleId,
                         ];
                         $this->session->set_userdata($data);
-                        redirect('Admin/Dashboard');
+                        redirect('Landingpage/hdepan');
                     else :
                         redirect('Auth/Login');
                     endif;

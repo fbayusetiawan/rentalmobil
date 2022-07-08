@@ -191,6 +191,19 @@ function fd_role($val = null)
     endif;
 }
 
+function fd_domisili($val = null)
+{
+    $option = [
+        '0' => 'Banjarmasin',
+        '1' => 'Luar Banjarmasin',
+    ];
+    if (empty($val)) :
+        return $option;
+    else :
+        return $option[$val];
+    endif;
+}
+
 function fd_ac($val = null)
 {
     $option = [

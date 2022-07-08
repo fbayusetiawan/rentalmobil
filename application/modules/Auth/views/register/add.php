@@ -95,13 +95,11 @@
                                                 Harap Diisi!
                                             </div>
                                         </div>
-
-                                        <div class="form-group mb-4">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="checkbox-signup">
-                                                <label class="custom-control-label" for="checkbox-signup">
-                                                    I accept <a href="javascript: void(0);">Terms and Conditions</a>
-                                                </label>
+                                        <div class="form-group mb-3">
+                                            <label for="validationCustom01">Domisili Anda Saat Ini</label>
+                                            <?= form_dropdown('domisili', fd_domisili(), '', 'class="form-control"') ?>
+                                            <div class="invalid-feedback">
+                                                Harus diisi!
                                             </div>
                                         </div>
 

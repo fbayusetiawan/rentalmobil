@@ -89,8 +89,7 @@ $no = '1';
                                 Tahun : <?= $row->tahunMobil ?></p>
                                 Harga Sewa : Rp.<?= number_format(floatval($row->hargaSewa), 0, ',', '.') ?>/Hari</p>
                                 <?php if ($row->isActive == "0"){
-                                    // echo ' <a class="small fw-medium" href="'. base_url('/Welcome/hdepan/detail/' . $row->idMobil) .'">Pesan Sekarang<i class="fa fa-arrow-right ms-2"></i></a>';
-                                    echo ' <a class="small fw-medium" href="'. base_url('Auth/login') .'">Pesan Sekarang<i class="fa fa-arrow-right ms-2"></i></a>';
+                                    echo ' <a class="small fw-medium" href="'. base_url('/Landingpage/hdepan/detail/' . $row->idMobil) .'">Pesan Sekarang<i class="fa fa-arrow-right ms-2"></i></a>';
                                 } else {
                                    echo '<span class="small fw-medium">Sedang Dirental</span>';
                                 } 

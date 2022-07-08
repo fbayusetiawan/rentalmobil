@@ -44,10 +44,6 @@ $no = '1';
                         <th>Alamat</th>
                         <th>: <?= $row->alamat ?></th>
                     </tr>
-                    <tr>
-                        <th>Nomer WhatsApp</th>
-                        <th>: <?= $row->noWa ?></th>
-                    </tr>
                 </table>
 
             </div> <!-- end card body-->

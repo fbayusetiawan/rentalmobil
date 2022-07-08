@@ -77,10 +77,14 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="<?= base_url() ?>" class="nav-item nav-link active">Home</a>
+                <a href="<?= base_url('Landingpage/Hdepan/kontak') ?>" class="nav-item nav-link">Kontak</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Halo, <?= $this->session->userdata('namaLengkap'); ?></a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href="<?= base_url('Auth/logout') ?>" class="dropdown-item">Keluar</a>
+                    </div>
+                </div>
             </div>
-            <a href="<?= base_url('Welcome/Hdepan/kontak') ?>" class="nav-item nav-link">Kontak</a>
-        </div>
-        <a href="<?= base_url('Auth/login') ?>" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Login<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
