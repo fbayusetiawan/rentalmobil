@@ -36,6 +36,18 @@ class Hdepan extends CI_Controller
         $this->template->load('landingpage', $this->vn . '/detail', $data);
     }
 
+    public function pembayaran()
+    {
+        $data['row'] = $this->primaryModel->getDataTransaksi();
+        $this->template->load('landingpage', $this->vn . '/pembayaran', $data);
+    }
+
+    public function invoice()
+    {
+        $data['row'] = $this->primaryModel->getTransaksiById($this->uri->segment(4));
+        $this->template->load('landingpage', $this->vn . '/invoice', $data);
+    }
+
     function addAction()
     {
         $this->primaryModel->save();
@@ -45,7 +57,7 @@ class Hdepan extends CI_Controller
     function transaksiAction()
     {
         $this->primaryModel->saveTransaksi();
-        redirect('Landingpage/Hdepan/kontak');
+        redirect('Landingpage/Hdepan/pembayaran');
     }
 
     function getTotal()

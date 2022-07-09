@@ -104,15 +104,6 @@ $no = '1';
                                 <span class="input-group-text" id="inputGroup-sizing-sm">Sampai Tanggal</span>
                                 <input type="date" class="form-control" id="tgl2" name="tanggalKembali" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                             </div>
-                            <div class="input-group input-group-sm mb-3">
-                                <span class="input-group-text" id="inputGroup-sizing-sm">Hari</span>
-                                <input type="text" class="form-control" id="diffDays" aria-label="Sizing example input" disabled aria-describedby="inputGroup-sizing-sm">
-                            </div>
-                            <div class="input-group input-group-sm mb-3">
-                                <span class="input-group-text" id="inputGroup-sizing-sm">Harga Sewa</span>
-                                <input type="text" class="form-control" value="Rp.<?= number_format($row->hargaSewa)  ?>" aria-label="Sizing example input" disabled aria-describedby="inputGroup-sizing-sm">
-                            </div>
-
                             <input type="text" class="form-control"  name="harga" value="<?= $row->hargaSewa ?>" aria-label="Sizing example input" hidden aria-describedby="inputGroup-sizing-sm">
 
                             <div class="col-12">
