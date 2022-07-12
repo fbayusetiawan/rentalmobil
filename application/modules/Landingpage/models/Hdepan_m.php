@@ -32,6 +32,7 @@ class Hdepan_m extends CI_Model
         $this->db->join('mobil', 'mobil.idMobil = transaksi.idMobil', 'left');
         $this->db->join('merk', 'merk.idMerkMObil = mobil.idMerkMObil', 'left');
         $this->db->join('pelanggan', 'pelanggan.idPelanggan = transaksi.idPelanggan', 'left');
+        $this->db->join('pegawai', 'pegawai.idPegawai = transaksi.idPegawai', 'left');
         $this->db->where('idTransaksi', $Value);
         return $this->db->get('transaksi')->row();
     }
@@ -68,13 +69,32 @@ class Hdepan_m extends CI_Model
             'tanggalKembali' => htmlspecialchars($this->input->post('tanggalKembali', TRUE)),
             'harga' => htmlspecialchars($this->input->post('harga', TRUE)),
             'denda' => htmlspecialchars($this->input->post('denda', TRUE)),
-            'lokasi' => htmlspecialchars($this->input->post('lokasi', TRUE)),
-            'isActive' => '0'
+            'statusTransaksi' => '0'
         ];
 
         $this->db->insert('transaksi', $object);
         // $this->db->update('mobil', $object2, $id);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Berhasil Disimpan</div>');
+    }
+
+    function updateTransaksi($Value, $foto)
+    {
+        $object = [
+                'foto' => $foto,
+                'totalHarga' => htmlspecialchars($this->input->post('totalHarga', TRUE)),
+                'statusTransaksi' => '1'
+        ];
+        
+        $this->db->where('idTransaksi', $Value);
+        $this->db->update('transaksi', $object);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Pembayaran Berhasil Dilakukan, Silahkan Menunggu Konfirmasi, Jika Belum Ditindak 1x24 Jam Silahkan Hubungi 081286943078</div>');
+    }
+
+    function deleteTransaksi($Value)
+    {
+        $this->db->where('idTransaksi', $Value);
+        $this->db->delete('transaksi');
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Transaksi Berhasil Dihapus</div>');
     }
 }
 

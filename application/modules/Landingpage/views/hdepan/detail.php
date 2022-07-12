@@ -82,17 +82,12 @@ $no = '1';
                                 <span class="input-group-text" id="inputGroup-sizing-sm">Nama Mobil</span>
                                 <input type="text" class="form-control" value="<?= $row->namaMerk ?> <?= $row->namaMobil ?>" aria-label="Sizing example input" disabled aria-describedby="inputGroup-sizing-sm">
                             </div>
-
-                            <div class="input-group input-group-sm mb-3">
-                                <span class="input-group-text" id="inputGroup-sizing-sm">Lokasi Penjemputan</span>
-                                <input type="text" class="form-control" name="lokasi" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                            </div>
                             <div class="input-group mb-3">
                                 <label class="input-group-text" for="inputGroupSelect01">Pilih Supir</label>
                                 <select class="form-select" name="idPegawai" id="inputGroupSelect01">
                                     <option value="">Klik untuk Pilih Supir</option>
                                     <?php foreach (callTable('pegawai')->result() as $p) : ?>
-                                        <option value="<?= $p->idPegawai ?>"><?= $p->namaPegawai ?></option>
+                                        <option value="<?= $p->idPegawai ?>"><?= $p->namaPegawai ?> - Rp.<?= number_format($p->hargaSupir,0,',',',') ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>

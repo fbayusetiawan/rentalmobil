@@ -44,7 +44,8 @@ class Hdepan extends CI_Controller
 
     public function invoice()
     {
-        $data['row'] = $this->primaryModel->getTransaksiById($this->uri->segment(4));
+        $id = $this->uri->segment(4);
+        $data['row'] = $this->primaryModel->getTransaksiById($id);
         $this->template->load('landingpage', $this->vn . '/invoice', $data);
     }
 
@@ -60,27 +61,31 @@ class Hdepan extends CI_Controller
         redirect('Landingpage/Hdepan/pembayaran');
     }
 
-    function getTotal()
+    function updateTransaksi()
     {
-        $d = $_GET['d'];
-        $e = $_GET['e'];
-
-        $data = $this->db->get('mobil')->result();
-
-        $to_date = new DateTime($d);
-        $from_date = new DateTime($e);
-        $hasil = $from_date->diff($to_date);
-
-        $ok = $hasil->d;
-        var_dump($ok);
-       
-        echo '<div class="input-group input-group-sm mb-3">';
-        echo '<span class="input-group-text" id="inputGroup-sizing-sm">Harga Sewa</span>';
-        // echo '<input type="text" class="form-control" id="hargaSewa" name="harga" value="Rp. ' . number_format(floatval($total), 0, ',', '.') . '" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">';
-        echo '<input type="text" class="form-control" id="hargaSewa" name="harga" value="Rp. ' . $ok . '" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">';
-        echo '</div>';
+        $id = $this->uri->segment(4);
+        $this->primaryModel->updateTransaksi($id, $this->upload_foto());
+        redirect('Landingpage/Hdepan/pembayaran');
     }
 
+    function deleteTransaksi()
+    {
+        $id = $this->uri->segment(4);
+        $this->primaryModel->deleteTransaksi($id);
+        redirect('Landingpage/Hdepan/pembayaran');
+    }
+
+    function upload_foto()
+    {
+        $config['upload_path']          = './upload/';
+        $config['allowed_types']        = 'jpg|png|jpeg';
+        $config['max_size']             = 2048; // imb
+        $this->load->library('upload', $config);
+        // proses upload
+        $this->upload->do_upload('foto');
+        $upload = $this->upload->data();
+        return $upload['file_name'];
+    }
     
 }
 

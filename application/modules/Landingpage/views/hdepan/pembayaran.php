@@ -10,6 +10,7 @@ $no = '1';
                     <!-- <h6 class="text-primary">Pembayaran</h6> -->
                     <h1 class="mb-4">Daftar Transaksi</h1>
                     <p class="mb-4 pb-2">Silahkan lakukan Pembayaran dengan menakan tombol Klik Untuk Bayar.</p>
+                    <?= $this->session->flashdata('message'); ?>
                     <table id="basic-datatable" class="table">
                         <thead>
                             <tr>
@@ -19,6 +20,7 @@ $no = '1';
                                 <th>Tanggal Sewa</th>
                                 <th>Tanggal Kembali</th>
                                 <th>Upload Bukti Transfer</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -35,7 +37,20 @@ $no = '1';
                                     <td><?= $data->namaMobil ?></td>
                                     <td><?= tgl_indo($data->tanggalPinjam) ?></td>
                                     <td><?= tgl_indo($data->tanggalKembali) ?></td>
-                                    <td><a href="<?= base_url($linkin . '/invoice/' . $data->idTransaksi) ?>" class="btn btn-info btn-sm" data-toggle="tooltip">Klik untuk Bayar</a></td>
+                                    <!-- <td>
+                                        <a href="<?= base_url($linkin . '/invoice/' . $data->idTransaksi) ?>" class="btn btn-info btn-sm" data-toggle="tooltip">Klik untuk Bayar</a>
+                                    </td> -->
+                                    <td>
+                                        <?php if ($data->statusTransaksi == 0) {
+                                            echo '<a href="' . base_url($linkin . '/invoice/' . $data->idTransaksi) . '" class="btn btn-info btn-sm" data-toggle="tooltip">Klik untuk Bayar</a>';
+                                        } else {
+                                            echo '<a href="#" class="btn btn-warning btn-sm" data-toggle="tooltip">Menunggu Konfirmasi</a>';
+                                        }
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <a href="<?= base_url($linkin . '/deleteTransaksi/' . $data->idTransaksi) ?>" class="btn btn-danger btn-sm" data-toggle="tooltip">Hapus</a>
+                                    </td>
                                 </tr>
                             <?php endforeach ?>
                         </tbody>
