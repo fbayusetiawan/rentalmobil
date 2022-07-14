@@ -60,9 +60,9 @@ class Mobil_m extends CI_Model
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Mobil Berhasil Disimpan</div>');
     }
 
-    function update($Value, $foto)
+    function update($Value, $fotoMobil)
     {
-        if (empty($foto)) {
+        if (empty($fotoMobil)) {
             $object = [
                 'namaMobil' => htmlspecialchars($this->input->post('namaMobil', TRUE)),
                 'idMerkMobil' => htmlspecialchars($this->input->post('idMerkMobil', TRUE)),
@@ -90,7 +90,7 @@ class Mobil_m extends CI_Model
                 'isActive' => htmlspecialchars($this->input->post('isActive', TRUE)),
                 'driver' => htmlspecialchars($this->input->post('driver', TRUE)),
                 'keyCar' => htmlspecialchars($this->input->post('keyCar', TRUE)),
-                'foto' => $foto,
+                'fotoMobil' => $fotoMobil,
 
             ];
         }

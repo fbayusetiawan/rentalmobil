@@ -23,6 +23,12 @@ class Laporan extends CI_Controller
         $this->load->view('laporan/supir', $data);
     }
 
+    function transaksi()
+    {
+        $data['data'] = $this->primaryModel->transaksi();
+        $this->load->view('laporan/transaksi', $data);
+    }
+
     function pelanggan()
     {
         // $dari = $this->input->post('dari');

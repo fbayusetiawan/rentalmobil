@@ -38,7 +38,7 @@
                                     <h6 class="h5 mb-0 mt-4">Buat Akun Anda</h6>
                                     <p class="text-muted mt-0 mb-4">Membuat akun akan memudahkan anda untuk mengakses dan bertransaksi di Nasir Rental Banjarmasin</p>
 
-                                    <form action="<?= base_url('auth/register/add_action') ?>" method="Post" class="needs-validation authentication-form" novalidate>
+                                    <form action="<?= base_url('auth/register/add_action') ?>" method="Post" class="needs-validation authentication-form" enctype="multipart/form-data" novalidate>
                                         <div class="form-group">
                                             <label for="validationCustom01" class="form-control-label">Username</label>
                                             <input type="text" name="username" class="form-control" required>
@@ -100,6 +100,20 @@
                                             <?= form_dropdown('domisili', fd_domisili(), '', 'class="form-control"') ?>
                                             <div class="invalid-feedback">
                                                 Harus diisi!
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="validationCustom01" class="form-control-label">Upload Foto KTP <small>format foto jpg/png maks (1 Mb)</small></label>
+                                            <input type="file" name="fotoKtp" class="form-control" required>
+                                            <div class="invalid-feedback">
+                                                Harap Diisi!
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="validationCustom01" class="form-control-label">Upload Foto SIM A <small>format foto jpg/png maks (1 Mb)</small></label>
+                                            <input type="file" name="fotoSim" class="form-control" required>
+                                            <div class="invalid-feedback">
+                                                Harap Diisi!
                                             </div>
                                         </div>
 

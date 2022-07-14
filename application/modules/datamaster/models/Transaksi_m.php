@@ -10,11 +10,40 @@ class Transaksi_m extends CI_Model
 
     function getAllData()
     {
+        
         $this->db->join('mobil', 'mobil.idMobil = '. $this->namaTable . '.idMobil', 'left');
+        $this->db->join('merk', 'merk.idMerkMobil = mobil.idMerkMobil', 'left');
         $this->db->join('pelanggan', 'pelanggan.idPelanggan = '. $this->namaTable . '.idPelanggan', 'left');
         $this->db->join('pegawai', 'pegawai.idPegawai = '. $this->namaTable . '.idPegawai', 'left');
+        $this->db->where('statusTransaksi', '1');
         return $this->db->get($this->namaTable)->result();
     }
+
+    function getAllDataAccept()
+    {
+        
+        $this->db->join('mobil', 'mobil.idMobil = '. $this->namaTable . '.idMobil', 'left');
+        $this->db->join('merk', 'merk.idMerkMobil = mobil.idMerkMobil', 'left');
+        $this->db->join('pelanggan', 'pelanggan.idPelanggan = '. $this->namaTable . '.idPelanggan', 'left');
+        $this->db->join('pegawai', 'pegawai.idPegawai = '. $this->namaTable . '.idPegawai', 'left');
+        $this->db->where('statusTransaksi', '2');
+        
+        return $this->db->get($this->namaTable)->result();
+    }
+
+    function getCar($idTransaksi)
+    {
+        // $idTransaksi = $this->getIdMobil($Value);
+        $this->db->where('idTransaksi', $idTransaksi);
+        return $this->db->get('transaksi')->row();
+    }
+
+    function getIdMobil($idMobil)
+    {
+        $this->db->where('idMobil', $idMobil);
+        return $this->db->get('mobil')->row();
+    }
+
     function getAllMobil()
     {
         return $this->db->get('merk')->result();
@@ -22,8 +51,46 @@ class Transaksi_m extends CI_Model
 
     function getDataById($Value)
     {
+        $this->db->join('mobil', 'mobil.idMobil = ' . $this->namaTable . '.idMobil', 'left');
+        $this->db->join('merk', 'merk.idMerkMobil = mobil.idMerkMobil', 'left');
+        $this->db->join('pelanggan', 'pelanggan.idPelanggan = ' . $this->namaTable . '.idPelanggan', 'left');
+        $this->db->join('pegawai', 'pegawai.idPegawai = ' . $this->namaTable . '.idPegawai', 'left');
         $this->db->where($this->pk, $Value);
         return $this->db->get($this->namaTable)->row();
+    }
+
+    function setuju($idTransaksi)
+    {
+        $idMobil = $this->getCar($idTransaksi);
+        $object = [
+            'statusTransaksi' => '2'
+        ];
+        $object2 = [
+            'isActive' => '1'
+        ];
+        $this->db->where('idTransaksi', $idTransaksi);
+        $this->db->update('transaksi', $object);
+
+        $this->db->where('idMobil', $idMobil->idMobil);
+        $this->db->update('mobil', $object2);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Transaksi Berhasil Disimpan</div>');
+    }
+
+    function batal($idTransaksi)
+    {
+        $idMobil = $this->getCar($idTransaksi);
+        $object = [
+            'statusTransaksi' => '1'
+        ];
+        $object2 = [
+            'isActive' => '0'
+        ];
+        $this->db->where('idTransaksi', $idTransaksi);
+        $this->db->update('transaksi', $object);
+
+        $this->db->where('idMobil', $idMobil->idMobil);
+        $this->db->update('mobil', $object2);
+        $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Data Transaksi Dibatalkan</div>');
     }
 
 

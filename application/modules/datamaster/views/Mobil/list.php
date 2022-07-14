@@ -35,7 +35,7 @@ $no = '1';
                             <tr>
                                 <td width="50"><?= $no++ ?></td>
                                 <td>
-                                    <img src="<?= base_url('upload/' . $row->foto) ?>" width="100px" alt="">
+                                    <img src="<?= base_url('upload/' . $row->fotoMobil) ?>" width="100px" alt="">
                                 </td>
                                 <td style="width: 100;"><?= $row->noPlat ?></td>
                                 <td style="width: 100;"><?= $row->namaMobil ?></td>

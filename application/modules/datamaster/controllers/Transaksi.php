@@ -18,8 +18,29 @@ class Transaksi extends CI_Controller
         $data['title'] = $this->titles;
         $data['pageTitle'] = "Data " . $this->titles;
         $data['data'] = $this->primaryModel->getAllData();
-
         $this->template->load('template', $this->vn . '/list', $data);
+    }
+
+    public function accept()
+    {
+        $data['title'] = $this->titles;
+        $data['pageTitle'] = "Data " . $this->titles;
+        $data['data'] = $this->primaryModel->getAllDataAccept();
+        $this->template->load('template', $this->vn . '/accept', $data);
+    }
+
+    function setuju()
+    {
+        $idTransaksi = $this->uri->segment(4);
+        $this->primaryModel->setuju($idTransaksi);
+        redirect('datamaster/' . $this->vn . '/accept');
+    }
+
+    function batal()
+    {
+        $idTransaksi = $this->uri->segment(4);
+        $this->primaryModel->batal($idTransaksi);
+        redirect('datamaster/' . $this->vn);
     }
 
     public function detail()

@@ -18,7 +18,6 @@ class Mobil extends CI_Controller
         $data['title'] = $this->titles;
         $data['pageTitle'] = "Data " . $this->titles;
         $data['data'] = $this->primaryModel->getAllData();
-
         $this->template->load('template', $this->vn . '/list', $data);
     }
 
@@ -89,7 +88,7 @@ class Mobil extends CI_Controller
         $config['max_size']             = 1024; // imb
         $this->load->library('upload', $config);
         // proses upload
-        $this->upload->do_upload('foto');
+        $this->upload->do_upload('fotoMobil');
         $upload = $this->upload->data();
         return $upload['file_name'];
     }

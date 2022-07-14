@@ -21,6 +21,16 @@ class Laporan_m extends CI_Model
         return $this->db->get('pelanggan')->result();
     }
 
+    function transaksi()
+    {
+        $this->db->join('mobil', 'mobil.idMobil = transaksi.idMobil', 'left');
+        $this->db->join('merk', 'merk.idMerkMobil = mobil.idMerkMobil', 'left');
+        $this->db->join('pelanggan', 'pelanggan.idPelanggan = transaksi.idPelanggan', 'left');
+        $this->db->join('pegawai', 'pegawai.idPegawai = transaksi.idPegawai', 'left');
+        $this->db->where('statusTransaksi', '2');
+        return $this->db->get('transaksi')->result();
+    }
+
 }
 
 /* End of file Laporan_m.php */

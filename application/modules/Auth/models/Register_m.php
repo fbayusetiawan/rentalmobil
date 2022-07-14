@@ -22,7 +22,7 @@ class Register_m extends CI_Model
         return $this->db->get('pelanggan')->row();
     }
 
-    public function savePelanggan()
+    public function savePelanggan($fotoKtp, $fotoSim)
     {
         $object = [
 
@@ -37,11 +37,13 @@ class Register_m extends CI_Model
             'alamat' => htmlspecialchars($this->input->post('alamat', TRUE)),
             'noTelp' => htmlspecialchars($this->input->post('noTelp', TRUE)),
             'dateCreated' => time(),
+            'fotoKtp' => $fotoKtp,
+            'fotoSim' => $fotoSim,
             'roleId' => '3',
             'isActive' => '1'
         ];
         $this->db->insert($this->namaTable, $object);
-        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Berhasil Disimpan</div>');
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Berhasil Disimpan, Silahkan Login!</div>');
     }
 }
 

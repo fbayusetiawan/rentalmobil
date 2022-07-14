@@ -80,7 +80,7 @@ $no = '1';
             <?php foreach ($data as $row) : ?>
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item rounded overflow-hidden">
-                        <img class="img-fluid" src="<?= base_url('upload/' . $row->foto) ?>" alt="">
+                        <img class="img-fluid" src="<?= base_url('upload/' . $row->fotoMobil) ?>" alt="">
                         <div class="position-relative p-4 pt-0">
                             <h4 class="mb-3"><?= $row->namaMerk ?> <?= $row->namaMobil ?></h4>
                             <p>Mobil : <?= $row->namaMerk ?> <?= $row->namaMobil ?> <br>

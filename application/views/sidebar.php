@@ -52,11 +52,20 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
 
                     <li class="menu-title">Menu</li>
                     <li>
-                        <a href="<?= base_url('Datamaster/Transaksi') ?>">
-                            <i data-feather="book"></i>
+                        <a href="javascript: void(0);">
+                            <i data-feather="truck"></i>
                             <span> Transaksi </span>
+                            <span class="menu-arrow"></span>
                         </a>
-                    </li>
+                        <ul class="nav-second-level" aria-expanded="false">
+                            <li>
+                                <a href="<?= base_url('Datamaster/Transaksi') ?>">New</a>
+                            </li>
+                            <li>
+                                <a href="<?= base_url('Datamaster/Transaksi/Accept') ?>">List</a>
+                            </li>
+                        </ul>
+                    <li>
                     <li>
                         <a href="<?= base_url('Admin/Service') ?>">
                             <i data-feather="settings"></i>
@@ -138,7 +147,7 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                         </ul>
                     </li>
                 <?php endif ?>
-                <li class="menu-title">Transaksi</li>
+                <li class="menu-title">Report</li>
                 <li>
                     <a href="javascript: void(0);">
                         <i data-feather="file-text"></i>
@@ -147,20 +156,19 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li>
-                            <a href="<?= base_url('laporan/mobil') ?>">Mobil</a>
+                            <a href="<?= base_url('laporan/mobil') ?>" target="_blank">Mobil</a>
                         </li>
                         <li>
-                            <a href="<?= base_url('laporan/supir') ?>">Supir</a>
+                            <a href="<?= base_url('laporan/supir') ?>" target="_blank">Supir</a>
                         </li>
                         <li>
-                            <!-- <a href="#m_pelanggan" data-toggle="modal">Pelanggan</a> -->
-                            <a href="<?= base_url('laporan/pelanggan') ?>">Pelanggan</a>
+                            <a href="<?= base_url('laporan/pelanggan') ?>" target="_blank">Pelanggan</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('laporan/transaksi') ?>" target="_blank">Transaksi</a>
                         </li>
                     </ul>
                 </li>
-
-
-
             </ul>
         </div>
         <!-- End Sidebar -->

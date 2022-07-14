@@ -88,7 +88,7 @@ $id = uniqid()
                     </div>
                     <div class="form-group mb-3">
                         <label for="validationCustom01">Foto Mobil </label>
-                        <input type="file" class="form-control" name="foto" required>
+                        <input type="file" class="form-control" name="fotoMobil" required>
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>

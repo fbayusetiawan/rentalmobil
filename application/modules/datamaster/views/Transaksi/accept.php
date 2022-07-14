@@ -9,7 +9,7 @@ $no = '1';
                 <li><a href="<?= base_url($linkin . '/add') ?>" class="btn btn-success">Tambah Data</a></li>
             </ol> -->
         </nav>
-        <h4 class="mb-1 mt-0">Data <?= $title ?></h4>
+        <h4 class="mb-1 mt-0">Data <?= $title ?> Yang Diterima</h4>
     </div>
 </div>
 <div class="row">
