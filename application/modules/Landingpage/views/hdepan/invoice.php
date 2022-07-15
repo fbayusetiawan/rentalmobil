@@ -59,7 +59,7 @@ $no = '1';
                     <form action="<?= base_url($linkin . '/updateTransaksi/' . $this->uri->segment(4) ) ?>" method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
                         <div class="form-group mb-3">
                             <label for="validationCustom01">Foto</label>
-                            <input type="file" class="form-control" name="foto">
+                            <input type="file" class="form-control" name="fotoTransaksi">
                             <div class="invalid-feedback">
                                 Harus diisi!
                             </div>

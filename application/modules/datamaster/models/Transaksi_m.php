@@ -31,6 +31,18 @@ class Transaksi_m extends CI_Model
         return $this->db->get($this->namaTable)->result();
     }
 
+    function getAllDataKembali()
+    {
+
+        $this->db->join('mobil', 'mobil.idMobil = ' . $this->namaTable . '.idMobil', 'left');
+        $this->db->join('merk', 'merk.idMerkMobil = mobil.idMerkMobil', 'left');
+        $this->db->join('pelanggan', 'pelanggan.idPelanggan = ' . $this->namaTable . '.idPelanggan', 'left');
+        $this->db->join('pegawai', 'pegawai.idPegawai = ' . $this->namaTable . '.idPegawai', 'left');
+        $this->db->where('statusTransaksi', '3');
+
+        return $this->db->get($this->namaTable)->result();
+    }
+
     function getCar($idTransaksi)
     {
         // $idTransaksi = $this->getIdMobil($Value);
@@ -91,6 +103,23 @@ class Transaksi_m extends CI_Model
         $this->db->where('idMobil', $idMobil->idMobil);
         $this->db->update('mobil', $object2);
         $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Data Transaksi Dibatalkan</div>');
+    }
+
+    function selesai($idTransaksi)
+    {
+        $idMobil = $this->getCar($idTransaksi);
+        $object = [
+            'statusTransaksi' => '3'
+        ];
+        $object2 = [
+            'isActive' => '0'
+        ];
+        $this->db->where('idTransaksi', $idTransaksi);
+        $this->db->update('transaksi', $object);
+
+        $this->db->where('idMobil', $idMobil->idMobil);
+        $this->db->update('mobil', $object2);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Mobil Sudah Selesai Di Rental</div>');
     }
 
 

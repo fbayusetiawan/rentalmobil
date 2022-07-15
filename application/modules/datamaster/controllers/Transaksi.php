@@ -29,6 +29,14 @@ class Transaksi extends CI_Controller
         $this->template->load('template', $this->vn . '/accept', $data);
     }
 
+    public function selesai()
+    {
+        $data['title'] = $this->titles;
+        $data['pageTitle'] = "Data " . $this->titles;
+        $data['data'] = $this->primaryModel->getAllDataKembali();
+        $this->template->load('template', $this->vn . '/selesai', $data);
+    }
+
     function setuju()
     {
         $idTransaksi = $this->uri->segment(4);
@@ -41,6 +49,13 @@ class Transaksi extends CI_Controller
         $idTransaksi = $this->uri->segment(4);
         $this->primaryModel->batal($idTransaksi);
         redirect('datamaster/' . $this->vn);
+    }
+
+    function actionSelesai()
+    {
+        $idTransaksi = $this->uri->segment(4);
+        $this->primaryModel->selesai($idTransaksi);
+        redirect('datamaster/' . $this->vn . '/selesai');
     }
 
     public function detail()

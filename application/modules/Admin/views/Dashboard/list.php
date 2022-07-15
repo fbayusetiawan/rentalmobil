@@ -19,8 +19,22 @@ $no = '1';
             <div class="card-body p-0">
                 <div class="media p-3">
                     <div class="media-body">
-                        <span class="text-muted text-uppercase font-size-12 font-weight-bold">Jumlah Supir Aktif</span>
-                        <h2 class="mb-0 text-info">0</h2>
+                        <span class="text-muted text-uppercase font-size-12 font-weight-bold">Jumlah Supir</span>
+                        <h2 class="mb-0 text-info"><?= $pegawai ?> Orang</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-xl-4">
+        <div class="card">
+            <div class="card-body p-0">
+                <div class="media p-3">
+                    <div class="media-body">
+                        <span class="text-muted text-uppercase font-size-12 font-weight-bold">Jumlah Pelanggan Rental</span>
+                        <h2 class="mb-0 text-info"><?= $pelanggan ?> Orang</h2>
                     </div>
 
                 </div>
@@ -35,7 +49,7 @@ $no = '1';
                     <div class="media-body">
                         <span class="text-muted text-uppercase font-size-12 font-weight-bold">Jumlah Mobil Tersedia</span>
                         <!-- <a href="<?= base_url('Posyandu/Bumil/New') ?>"> -->
-                        <h2 class="mb-0 text-info"><?= $totalMobil ?></h2>
+                        <h2 class="mb-0 text-info"><?= $totalMobil ?> Mobil</h2>
                         <!-- </a> -->
                     </div>
 
@@ -49,8 +63,8 @@ $no = '1';
             <div class="card-body p-0">
                 <div class="media p-3">
                     <div class="media-body">
-                        <span class="text-muted text-uppercase font-size-12 font-weight-bold">Jumlah Mobil Terpakai</span>
-                        <h2 class="mb-0 text-info">0</h2>
+                        <span class="text-muted text-uppercase font-size-12 font-weight-bold">Jumlah Mobil Terental</span>
+                        <h2 class="mb-0 text-info"><?= $totalMobil1 ?> Mobil</h2>
                     </div>
 
                 </div>

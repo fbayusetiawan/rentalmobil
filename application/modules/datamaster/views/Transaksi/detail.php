@@ -99,11 +99,14 @@ $no = '1';
                 <br>
                 <?php
                 if ($row->statusTransaksi == 1) {
-                    ?>
-                   <a href="<?= base_url($linkin . '/setuju/' . $this->uri->segment(4)) ?>"><button type="button" class="btn btn-primary btn-sm">Setujui</button></a>
-              <?php  } else { ?>
+                ?>
+                    <a href="<?= base_url($linkin . '/setuju/' . $this->uri->segment(4)) ?>"><button type="button" class="btn btn-primary btn-sm">Setujui</button></a>
+                <?php  } elseif ($row->statusTransaksi == 2) { ?>
+                    <a href="<?= base_url($linkin . '/actionSelesai/' . $this->uri->segment(4)) ?>"><button type="button" class="btn btn-success btn-sm">Selesai Rental</button></a>
                     <a href="<?= base_url($linkin . '/batal/' . $this->uri->segment(4)) ?>"><button type="button" class="btn btn-warning btn-sm">Batalkan Transaksi</button></a>
-               <?php }
+                <?php } else { ?>
+                    <a href="<?= base_url($linkin . '/batal/' . $this->uri->segment(4)) ?>"><button type="button" class="btn btn-warning btn-sm">Batalkan Transaksi</button></a>
+                <?php }
                 ?>
                 <a href="<?= base_url($linkin) ?>"><button type="button" class="btn btn-danger btn-sm">Kembali</button></a>
 
@@ -185,7 +188,7 @@ $no = '1';
             </div>
             <div class="modal-body">
                 <form action="<?= base_url('laporan/pelanggan') ?>" method="post" target="_blank">
-                    <img src="<?= base_url('upload/' . $row->foto) ?>" width="250" alt="">
+                    <img src="<?= base_url('upload/' . $row->fotoTransaksi) ?>" width="250" alt="">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

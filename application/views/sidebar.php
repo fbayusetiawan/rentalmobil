@@ -62,7 +62,10 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                                 <a href="<?= base_url('Datamaster/Transaksi') ?>">New</a>
                             </li>
                             <li>
-                                <a href="<?= base_url('Datamaster/Transaksi/Accept') ?>">List</a>
+                                <a href="<?= base_url('Datamaster/Transaksi/Accept') ?>">Dirental</a>
+                            </li>
+                            <li>
+                                <a href="<?= base_url('Datamaster/Transaksi/Selesai') ?>">Selesai Dirental</a>
                             </li>
                         </ul>
                     <li>
@@ -70,6 +73,12 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                         <a href="<?= base_url('Admin/Service') ?>">
                             <i data-feather="settings"></i>
                             <span> Service </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('Admin/Jaminan') ?>">
+                            <i data-feather="tag"></i>
+                            <span> Jaminan </span>
                         </a>
                     </li>
                     <li class="menu-title">Master Data</li>
@@ -166,6 +175,12 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                         </li>
                         <li>
                             <a href="<?= base_url('laporan/transaksi') ?>" target="_blank">Transaksi</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('laporan/selesai') ?>" target="_blank">Transaksi Selesai</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('laporan/jaminan') ?>" target="_blank">Data Jaminan</a>
                         </li>
                     </ul>
                 </li>

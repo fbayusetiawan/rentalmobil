@@ -31,6 +31,23 @@ class Laporan_m extends CI_Model
         return $this->db->get('transaksi')->result();
     }
 
+    function transaksiSelesai()
+    {
+        $this->db->join('mobil', 'mobil.idMobil = transaksi.idMobil', 'left');
+        $this->db->join('merk', 'merk.idMerkMobil = mobil.idMerkMobil', 'left');
+        $this->db->join('pelanggan', 'pelanggan.idPelanggan = transaksi.idPelanggan', 'left');
+        $this->db->join('pegawai', 'pegawai.idPegawai = transaksi.idPegawai', 'left');
+        $this->db->where('statusTransaksi', '3');
+        return $this->db->get('transaksi')->result();
+    }
+
+    function jaminan()
+    {
+        // $this->db->where('dateCreated BETWEEN "' . $dari . '" AND "' . $sampai . '"');
+        $this->db->join('pelanggan', 'pelanggan.idPelanggan = jaminan.idPelanggan', 'left');
+        return $this->db->get('jaminan')->result();
+    }
+
 }
 
 /* End of file Laporan_m.php */

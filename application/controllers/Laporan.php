@@ -29,6 +29,12 @@ class Laporan extends CI_Controller
         $this->load->view('laporan/transaksi', $data);
     }
 
+    function selesai()
+    {
+        $data['data'] = $this->primaryModel->transaksiSelesai();
+        $this->load->view('laporan/selesai', $data);
+    }
+
     function pelanggan()
     {
         // $dari = $this->input->post('dari');
@@ -36,6 +42,12 @@ class Laporan extends CI_Controller
         // $data['data'] = $this->primaryModel->pelanggan($dari, $sampai);
         $data['data'] = $this->primaryModel->pelanggan();
         $this->load->view('laporan/pelanggan', $data);
+    }
+
+    function jaminan()
+    {
+        $data['data'] = $this->primaryModel->jaminan();
+        $this->load->view('laporan/jaminan', $data);
     }
 }
 

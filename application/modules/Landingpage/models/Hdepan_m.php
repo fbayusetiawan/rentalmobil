@@ -77,10 +77,10 @@ class Hdepan_m extends CI_Model
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Berhasil Disimpan</div>');
     }
 
-    function updateTransaksi($Value, $foto)
+    function updateTransaksi($Value, $fotoTransaksi)
     {
         $object = [
-                'foto' => $foto,
+                'fotoTransaksi' => $fotoTransaksi,
                 'totalHarga' => htmlspecialchars($this->input->post('totalHarga', TRUE)),
                 'statusTransaksi' => '1'
         ];

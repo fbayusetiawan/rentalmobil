@@ -82,7 +82,7 @@ class Hdepan extends CI_Controller
         $config['max_size']             = 2048; // imb
         $this->load->library('upload', $config);
         // proses upload
-        $this->upload->do_upload('foto');
+        $this->upload->do_upload('fotoTransaksi');
         $upload = $this->upload->data();
         return $upload['file_name'];
     }
