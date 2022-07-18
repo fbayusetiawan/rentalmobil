@@ -109,6 +109,7 @@ class Transaksi_m extends CI_Model
     {
         $idMobil = $this->getCar($idTransaksi);
         $object = [
+            'tanggalSelesai' => $this->input->post('tanggalSelesai'),
             'statusTransaksi' => '3'
         ];
         $object2 = [

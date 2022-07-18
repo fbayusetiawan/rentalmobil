@@ -68,7 +68,6 @@ class Hdepan_m extends CI_Model
             'tanggalPinjam' => htmlspecialchars($this->input->post('tanggalPinjam', TRUE)),
             'tanggalKembali' => htmlspecialchars($this->input->post('tanggalKembali', TRUE)),
             'harga' => htmlspecialchars($this->input->post('harga', TRUE)),
-            'denda' => htmlspecialchars($this->input->post('denda', TRUE)),
             'statusTransaksi' => '0'
         ];
 

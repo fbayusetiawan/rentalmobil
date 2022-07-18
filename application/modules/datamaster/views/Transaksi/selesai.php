@@ -26,17 +26,24 @@ $no = '1';
                             <th class="text-center">No Telpon</th>
                             <th class="text-center">Mobil Yang Dirental</th>
                             <th class="text-center">Status</th>
+                            <th class="text-center">Denda</th>
                             <th class="text-center">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($data as $row) : ?>
+                            <?php $x = strtotime($row->tanggalKembali);
+                                  $y = strtotime($row->tanggalSelesai);
+                                  $selesai = abs($x - $y) / (60*60*24);
+                                  $totalDenda = $selesai * $row->dendaMobil;  
+                                    ?>
                             <tr>
                                 <td width="50"><?= $no++ ?></td>
                                 <td style="width: 100;"><?= $row->noKtp ?></td>
                                 <td style="width: 100;"><?= $row->namaPelanggan ?></td>
                                 <td style="width: 100;"><?= $row->noTelp ?></td>
                                 <td style="width: 100;"><?= $row->namaMerk ?> <?= $row->namaMobil ?>, <?= $row->tahunMobil ?></td>
+
                                 <td style="width: 100;">
                                     <?php
                                     if ($row->statusTransaksi == 0) {
@@ -45,7 +52,7 @@ $no = '1';
                                         $row->statusTransaksi == 1
                                     ) {
                                         echo '<span class="badge badge-info">Sudah Melakukan Pembayaran</span>';
-                                      }  else if (
+                                    } else if (
                                         $row->statusTransaksi == 2
                                     ) {
                                         echo '<span class="badge badge-info">Selesai</span>';
@@ -54,6 +61,7 @@ $no = '1';
                                     }
                                     ?>
                                 </td>
+                                <td style="width: 100;">Rp.<?= number_format($totalDenda,0,',',',') ?></td>
                                 <td width="100" class="text-center">
                                     <div class="btn-group mb-0">
                                         <a href="<?= base_url($linkin . '/edit/' . $row->idTransaksi) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="Edit"><i class="uil uil-edit"></i></a>

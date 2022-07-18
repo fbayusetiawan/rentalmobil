@@ -133,15 +133,6 @@ class Transaksi extends CI_Controller
         echo '<figcaption class="figure-caption">AC : '. fd_ac($mobil->ac) .'</figcaption>';
         endforeach;
         echo '</figure>';
-        // echo '<select name="idDevisi"  required class="form-control">';
-        // echo '    <option value="">Pilih Devisi</option>';
-        // foreach ($data as $devisi) :
-        //     echo '        <option value="' . $devisi->idDevisi . '"> ' . $devisi->namaDevisi . ' </option>';
-        // endforeach;
-        // echo '</select>';
-        // echo '<div class="invalid-feedback">';
-        // echo    'Harus dipilih!';
-        // echo '</div>';
         echo '</div>';
     }
 }

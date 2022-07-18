@@ -102,7 +102,7 @@ $no = '1';
                 ?>
                     <a href="<?= base_url($linkin . '/setuju/' . $this->uri->segment(4)) ?>"><button type="button" class="btn btn-primary btn-sm">Setujui</button></a>
                 <?php  } elseif ($row->statusTransaksi == 2) { ?>
-                    <a href="<?= base_url($linkin . '/actionSelesai/' . $this->uri->segment(4)) ?>"><button type="button" class="btn btn-success btn-sm">Selesai Rental</button></a>
+                    <a href="#m_tanggalSelesai" data-toggle="modal"><button type="button" class="btn btn-success btn-sm">Selesai Rental</button></a>
                     <a href="<?= base_url($linkin . '/batal/' . $this->uri->segment(4)) ?>"><button type="button" class="btn btn-warning btn-sm">Batalkan Transaksi</button></a>
                 <?php } else { ?>
                     <a href="<?= base_url($linkin . '/batal/' . $this->uri->segment(4)) ?>"><button type="button" class="btn btn-warning btn-sm">Batalkan Transaksi</button></a>
@@ -193,6 +193,31 @@ $no = '1';
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <!-- <button type="submit" class="btn btn-primary">Print</button> -->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="m_tanggalSelesai" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Pengembalian Mobil</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= base_url($linkin . '/actionSelesai/' . $this->uri->segment(4)) ?>" method="post" target="_blank">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Tanggal Selesai</label>
+                        <input type="date" class="form-control" name="tanggalSelesai">
+                    </div>
+                    <input type="text" value="<?= $row->dendaMobil ?>" hidden name="dendaTransaksi">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
                 </form>
             </div>
         </div>

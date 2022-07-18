@@ -76,7 +76,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="<?= base_url() ?>" class="nav-item nav-link active">Home</a>
+                <a href="<?= base_url('Landingpage/Hdepan') ?>" class="nav-item nav-link active">Home</a>
                 <a href="<?= base_url('Landingpage/Hdepan/kontak') ?>" class="nav-item nav-link">Kontak</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Halo, <?= $this->session->userdata('namaLengkap'); ?></a>
