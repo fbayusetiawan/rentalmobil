@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 08, 2022 at 02:15 AM
+-- Generation Time: Jul 19, 2022 at 05:24 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -39,8 +39,28 @@ CREATE TABLE `hubungi` (
 --
 
 INSERT INTO `hubungi` (`idHubungi`, `namaLengkap`, `email`, `isi`) VALUES
-(1, 'Muhammad Dzaky', 'fachrizalbayusetiawan@gmail.com', 'yttu'),
-(2, 'Erma Ariyani', 'fachrizalbayusetiawan@gmail.com', 'sdfewgegetregfsdgre');
+(1, 'Muhammad Dzaky', 'fachrizalbayusetiawan@gmail.com', 'yttu');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jaminan`
+--
+
+CREATE TABLE `jaminan` (
+  `idJaminan` int(11) NOT NULL,
+  `idPelanggan` varchar(20) NOT NULL,
+  `namaJaminan` varchar(128) NOT NULL,
+  `fotoJaminan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `jaminan`
+--
+
+INSERT INTO `jaminan` (`idJaminan`, `idPelanggan`, `namaJaminan`, `fotoJaminan`) VALUES
+(1, '62c076c7bf771', 'Motor Beat', '0000483401.jpg'),
+(2, '62d55d884aa10', 'Motor Beat', '00004834014.jpg');
 
 -- --------------------------------------------------------
 
@@ -78,12 +98,10 @@ CREATE TABLE `mobil` (
   `noPlat` varchar(10) NOT NULL,
   `tahunMobil` varchar(4) NOT NULL,
   `jumlahKursi` int(11) NOT NULL,
-  `ac` int(11) NOT NULL,
-  `driver` int(11) NOT NULL,
-  `keyCar` int(11) NOT NULL,
-  `foto` text NOT NULL,
+  `fotoMobil` text NOT NULL,
   `warnaMobil` varchar(50) NOT NULL,
   `hargaSewa` varchar(100) NOT NULL,
+  `dendaMobil` varchar(128) NOT NULL,
   `isActive` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -91,11 +109,12 @@ CREATE TABLE `mobil` (
 -- Dumping data for table `mobil`
 --
 
-INSERT INTO `mobil` (`idMobil`, `namaMobil`, `idMerkMobil`, `noPlat`, `tahunMobil`, `jumlahKursi`, `ac`, `driver`, `keyCar`, `foto`, `warnaMobil`, `hargaSewa`, `isActive`) VALUES
-('62b2b93a93ff1', 'Innova Reborn V', 1, 'DA 2000 AB', '2015', 8, 1, 0, 1, 'innova_reborn_v_hitam.jpg', 'Hitam', '500000', 0),
-('62b2b9894cfc5', 'Innova Reborn V', 1, 'DA 2022 AB', '2021', 8, 0, 0, 0, 'innova_reborn_v_silver.jpg', 'Silver', '500000', 0),
-('62b2ba316b834', 'Avanza Facelift 2021', 1, 'DA 1011 TA', '2021', 8, 1, 0, 0, 'avanza_facelift_2021.jpg', 'Hitam', '450000', 0),
-('62b2bbbb73242', 'Triton 4x4', 6, 'DA 2142 TH', '2017', 5, 1, 0, 0, 'triton_4x4.jpg', 'Hitam', '700000', 1);
+INSERT INTO `mobil` (`idMobil`, `namaMobil`, `idMerkMobil`, `noPlat`, `tahunMobil`, `jumlahKursi`, `fotoMobil`, `warnaMobil`, `hargaSewa`, `dendaMobil`, `isActive`) VALUES
+('62b2b93a93ff1', 'Innova Reborn V', 1, 'DA 2000 AB', '2015', 8, 'innova_reborn_v_hitam.jpg', 'Hitam', '500000', '500000', 0),
+('62b2b9894cfc5', 'Innova Reborn G', 1, 'DA 2022 AB', '2021', 8, 'innova_reborn_v_silver.jpg', 'Silver', '500000', '500000', 1),
+('62b2ba316b834', 'Avanza Facelift 2021', 1, 'DA 1011 TA', '2021', 8, 'avanza_facelift_2021.jpg', 'Hitam', '450000', '450000', 0),
+('62b2bbbb73242', 'Triton 4x4', 6, 'DA 2142 TH', '2017', 5, 'triton_4x4.jpg', 'Hitam', '700000', '700000', 0),
+('62d620416a2c4', 'Civic Type R', 2, 'DA 1111 AB', '2022', 5, 'exterior01__1621657879722.jpg', 'Merah', '1500000', '1500000', 0);
 
 -- --------------------------------------------------------
 
@@ -115,16 +134,17 @@ CREATE TABLE `pegawai` (
   `roleId` int(11) NOT NULL,
   `isActive` int(11) NOT NULL,
   `foto` text NOT NULL,
-  `helpNumber` varchar(3) NOT NULL
+  `helpNumber` varchar(3) NOT NULL,
+  `hargaSupir` varchar(128) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pegawai`
 --
 
-INSERT INTO `pegawai` (`idPegawai`, `namaPegawai`, `noIndukKepegawaian`, `jk`, `tanggalLahir`, `tempatLahir`, `noWa`, `alamat`, `roleId`, `isActive`, `foto`, `helpNumber`) VALUES
-('62a9d66ee72e8', 'Bayu Setiawan', '2163150622001', 1, '1997-06-15', 'Tanjung', '085156362232', 'Jl. Handil Bakti Raya Pesona Indah', 3, 0, '286407642_3097630967168101_5867907648036932842_n.jpg', '001'),
-('62bf1c429033e', 'Uchiha Sasuke', '2163010722002', 1, '1997-07-09', 'Konohagakure', '085156362232', 'konohagakure', 3, 0, '075756800_1429344595-sasuke-1borutocapture11.jpg', '002');
+INSERT INTO `pegawai` (`idPegawai`, `namaPegawai`, `noIndukKepegawaian`, `jk`, `tanggalLahir`, `tempatLahir`, `noWa`, `alamat`, `roleId`, `isActive`, `foto`, `helpNumber`, `hargaSupir`) VALUES
+('62a9d66ee72e8', 'Bayu Setiawan', '2163150622001', 1, '1997-06-15', 'Tanjung', '085156362232', 'Jl. Handil Bakti Raya Pesona Indah', 3, 0, '286407642_3097630967168101_5867907648036932842_n.jpg', '001', '150000'),
+('62bf1c429033e', 'Uchiha Sasuke', '2163010722002', 1, '1997-07-09', 'Konohagakure', '085156362232', 'konohagakure', 3, 0, '075756800_1429344595-sasuke-1borutocapture11.jpg', '002', '150000');
 
 -- --------------------------------------------------------
 
@@ -145,17 +165,20 @@ CREATE TABLE `pelanggan` (
   `noTelp` varchar(15) NOT NULL,
   `dateCreated` int(11) NOT NULL,
   `roleId` int(11) NOT NULL,
-  `isActive` int(11) NOT NULL
+  `isActive` int(11) NOT NULL,
+  `fotoKtp` text NOT NULL,
+  `fotoSim` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pelanggan`
 --
 
-INSERT INTO `pelanggan` (`idPelanggan`, `username`, `password`, `keyPas`, `noKtp`, `namaPelanggan`, `jk`, `alamat`, `domisili`, `noTelp`, `dateCreated`, `roleId`, `isActive`) VALUES
-('62bf14b24af1f', 'naruto', '$2y$10$G/4I6udse07rOX2lT4ISeu7UXaLvak9RunF0eeEJkKfwHFDdy4pEq', 'naruto123', '6309070409701006', 'Uzumaki Naruto', 1, 'Jl. Handil Bakti Raya Pesona Indah', 0, '081251898991', 1656689842, 3, 1),
-('62c076c7bf771', 'sasuke', '$2y$10$gHbHjCW4UF/e7vXuCzwpU.Sd.EPAVeLQnNY8j4mHCNM.mTDeBQ0Hy', 'sasuke123', '6309070409701009', 'Uchiha Sasuke', 1, 'Jl. Bakti Utama No 1', 1, '081251898991', 1656780487, 3, 1),
-('62c0776f19a20', 'sakura', '$2y$10$reIENrn7x57LzEoIPKUypedGaw4mdKbIm8r5Rp.MrT/5ueCZbNoj6', 'sakura123', '6309070409701008', 'Sakura Haruno', 2, 'Jl. Jahri Saleh, Komp. Kenanga Indah ', 0, '081251898992', 1656780655, 3, 1);
+INSERT INTO `pelanggan` (`idPelanggan`, `username`, `password`, `keyPas`, `noKtp`, `namaPelanggan`, `jk`, `alamat`, `domisili`, `noTelp`, `dateCreated`, `roleId`, `isActive`, `fotoKtp`, `fotoSim`) VALUES
+('62bf14b24af1f', 'naruto', '$2y$10$G/4I6udse07rOX2lT4ISeu7UXaLvak9RunF0eeEJkKfwHFDdy4pEq', 'naruto123', '6309070409701006', 'Uzumaki Naruto', 1, 'Jl. Handil Bakti Raya Pesona Indah', 0, '081251898991', 1656689842, 3, 1, '', ''),
+('62c076c7bf771', 'sasuke', '$2y$10$gHbHjCW4UF/e7vXuCzwpU.Sd.EPAVeLQnNY8j4mHCNM.mTDeBQ0Hy', 'sasuke123', '6309070409701009', 'Uchiha Sasuke', 1, 'Jl. Bakti Utama No 1', 1, '081251898991', 1656780487, 3, 1, '', ''),
+('62cf938c5171d', 'bayu', '$2y$10$2NWbV2UV3PEIZ8oWK4QNTuGXlrLBnRk.vU9l6FnUZjxk4Fnbslrki', 'bayu123', '6309070409701022', 'Bayu Setiawan', 1, 'Jl. Handil Bakti Raya Pesona Indah', 0, '081251898990', 1657770892, 3, 1, '075756800_1429344595-sasuke-1borutocapture12.jpg', '279860932_407170168081950_6545682480426208850_n1.jpg'),
+('62d55d884aa10', 'alvianor', '$2y$10$asr1spchWdFtxW5dHOFHNOhMvx.MaqNZos8fGb.fp821YBoGB1uTq', 'alvi123', '6309070409701088', 'M. Alvianor', 1, 'Jl. in aja dulu, siapa tau betah', 0, '081251898991', 1658150280, 3, 1, 'e-ktp-guohui-chen.jpg', 'e-ktp-guohui-chen.jpg');
 
 -- --------------------------------------------------------
 
@@ -191,21 +214,24 @@ CREATE TABLE `transaksi` (
   `idMobil` varchar(20) NOT NULL,
   `idPegawai` varchar(20) DEFAULT NULL,
   `idPelanggan` varchar(20) NOT NULL,
-  `hari` varchar(4) NOT NULL,
   `tanggalPinjam` date NOT NULL,
   `tanggalKembali` date NOT NULL,
+  `tanggalSelesai` date DEFAULT NULL,
   `harga` varchar(100) NOT NULL,
-  `denda` varchar(100) DEFAULT NULL,
-  `lokasi` text NOT NULL,
-  `isActive` int(11) NOT NULL
+  `totalHarga` varchar(128) NOT NULL,
+  `fotoTransaksi` text NOT NULL,
+  `statusTransaksi` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `transaksi`
 --
 
-INSERT INTO `transaksi` (`idTransaksi`, `idMobil`, `idPegawai`, `idPelanggan`, `hari`, `tanggalPinjam`, `tanggalKembali`, `harga`, `denda`, `lokasi`, `isActive`) VALUES
-('62c411d49e031', '62b2b9894cfc5', '62a9d66ee72e8', '62bf14b24af1f', '', '2022-07-05', '2022-07-06', '500000', '', 'tanjung', 0);
+INSERT INTO `transaksi` (`idTransaksi`, `idMobil`, `idPegawai`, `idPelanggan`, `tanggalPinjam`, `tanggalKembali`, `tanggalSelesai`, `harga`, `totalHarga`, `fotoTransaksi`, `statusTransaksi`) VALUES
+('62d11a4e6ae2f', '62b2b9894cfc5', '62a9d66ee72e8', '62cf938c5171d', '2022-07-13', '2022-07-15', '2022-07-15', '500000', '1300000', '00004834012.jpg', 3),
+('62d132ada38b3', '62b2b9894cfc5', '62a9d66ee72e8', '62cf938c5171d', '2022-07-14', '2022-07-15', NULL, '500000', '650000', '00004834013.jpg', 2),
+('62d55dd3f4157', '62b2ba316b834', '62a9d66ee72e8', '62d55d884aa10', '2022-07-14', '2022-07-16', '2022-07-16', '450000', '1200000', '632ed30944dd6ad9c5b254e3bb866c80.jpg', 3),
+('62d6215ba4043', '62d620416a2c4', '62bf1c429033e', '62bf14b24af1f', '2022-07-19', '2022-07-20', NULL, '1500000', '1650000', '632ed30944dd6ad9c5b254e3bb866c801.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -245,6 +271,12 @@ ALTER TABLE `hubungi`
   ADD PRIMARY KEY (`idHubungi`);
 
 --
+-- Indexes for table `jaminan`
+--
+ALTER TABLE `jaminan`
+  ADD PRIMARY KEY (`idJaminan`);
+
+--
 -- Indexes for table `merk`
 --
 ALTER TABLE `merk`
@@ -273,7 +305,8 @@ ALTER TABLE `pelanggan`
 -- Indexes for table `service`
 --
 ALTER TABLE `service`
-  ADD PRIMARY KEY (`idService`);
+  ADD PRIMARY KEY (`idService`),
+  ADD KEY `idMobil` (`idMobil`);
 
 --
 -- Indexes for table `transaksi`
@@ -281,7 +314,8 @@ ALTER TABLE `service`
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`idTransaksi`),
   ADD KEY `idPelanggan` (`idPelanggan`),
-  ADD KEY `idMobil` (`idMobil`);
+  ADD KEY `idMobil` (`idMobil`),
+  ADD KEY `idPegawai` (`idPegawai`);
 
 --
 -- Indexes for table `user`
@@ -298,6 +332,12 @@ ALTER TABLE `user`
 --
 ALTER TABLE `hubungi`
   MODIFY `idHubungi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `jaminan`
+--
+ALTER TABLE `jaminan`
+  MODIFY `idJaminan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `merk`
@@ -322,11 +362,18 @@ ALTER TABLE `mobil`
   ADD CONSTRAINT `mobil_ibfk_1` FOREIGN KEY (`idMerkMobil`) REFERENCES `merk` (`idMerkMobil`);
 
 --
+-- Constraints for table `service`
+--
+ALTER TABLE `service`
+  ADD CONSTRAINT `service_ibfk_1` FOREIGN KEY (`idMobil`) REFERENCES `mobil` (`idMobil`);
+
+--
 -- Constraints for table `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD CONSTRAINT `transaksi_ibfk_1` FOREIGN KEY (`idPelanggan`) REFERENCES `pelanggan` (`idPelanggan`),
-  ADD CONSTRAINT `transaksi_ibfk_2` FOREIGN KEY (`idMobil`) REFERENCES `mobil` (`idMobil`);
+  ADD CONSTRAINT `transaksi_ibfk_2` FOREIGN KEY (`idMobil`) REFERENCES `mobil` (`idMobil`),
+  ADD CONSTRAINT `transaksi_ibfk_3` FOREIGN KEY (`idPegawai`) REFERENCES `pegawai` (`idPegawai`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
