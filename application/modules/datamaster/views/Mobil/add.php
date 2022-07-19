@@ -73,18 +73,12 @@ $id = uniqid()
                             Harus diisi!
                         </div>
                     </div>
-
                     <div class="form-group mb-3">
-                        <label class="col col-form-label">Full AC</label>
-                        <?= form_dropdown('ac', array('1' => 'Tersedia', '2' => 'Tidak Tersedia'), '', 'class="form-control"'); ?>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label class="col col-form-label">Status Mobil</label>
-                        <?= form_dropdown('IsActive', array('0' => 'Tersedia', '1' => 'Tidak Tersedia'), '', 'class="form-control"'); ?>
-                    </div>
-                    <div class="form-group mb-3">
-                        <label class="col col-form-label">Lepas Kunci</label>
-                        <?= form_dropdown('keyCar', array('0' => 'Tidak', '1' => 'Ya'), '', 'class="form-control"'); ?>
+                        <label for="validationCustom01">Harga Denda Mobil </label>
+                        <input type="text" class="form-control" name="dendaMobil" required>
+                        <div class="invalid-feedback">
+                            Harus diisi!
+                        </div>
                     </div>
                     <div class="form-group mb-3">
                         <label for="validationCustom01">Foto Mobil </label>

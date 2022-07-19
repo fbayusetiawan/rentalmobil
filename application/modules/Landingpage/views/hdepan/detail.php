@@ -38,23 +38,6 @@ $no = '1';
                                 <th scope="row">Kursi</th>
                                 <td>: <?= $row->jumlahKursi ?></td>
                             </tr>
-                            <tr>
-                                <th scope="row">Fasilitas</th>
-                                <td>: <?php if ($row->ac == "0") {
-                                            echo 'Full AC <i class="fa fa-ban text-primary me-3"></i></p>';
-                                        } else {
-
-                                            echo 'Full AC <i class="fa fa-check-circle text-primary me-3"></i></p>';
-                                        }
-                                        ?> : <?php if ($row->keyCar == "0") {
-                                                    echo 'Lepas Kunci <i class="fa fa-ban text-primary me-3"></i></p>';
-                                                } else {
-
-                                                    echo 'Lepas Kunci <i class="fa fa-check-circle text-primary me-3"></i></p>';
-                                                }
-                                                ?>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
                     </p>

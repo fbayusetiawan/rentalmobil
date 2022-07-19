@@ -42,7 +42,7 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                     </div>
                     <div class="form-group mb-3">
                         <label for="validationCustom01">Tahun Mobil </label>
-                        <input type="date" class="form-control" name="tahunMobil" value="<?= $row->tahunMobil ?>" required>
+                        <input type="text" class="form-control" name="tahunMobil" value="<?= $row->tahunMobil ?>" required>
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
@@ -69,8 +69,15 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                         </div>
                     </div>
                     <div class="form-group mb-3">
+                        <label for="validationCustom01">Harga Denda Mobil </label>
+                        <input type="text" class="form-control" name="dendaMobil" value="<?= $row->dendaMobil ?>" required>
+                        <div class="invalid-feedback">
+                            Harus diisi!
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
                         <label for="validationCustom01">Foto Mobil </label>
-                        <input type="file" class="form-control" name="foto">
+                        <input type="file" class="form-control" name="fotoMobil">
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>

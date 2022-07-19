@@ -39,7 +39,7 @@ class Mobil_m extends CI_Model
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Servis Disimpan</div>');
     }
 
-    function save($foto)
+    function save($fotoMobil)
     {
         $object = [
             'idMobil' => uniqid(),
@@ -47,14 +47,12 @@ class Mobil_m extends CI_Model
             'idMerkMobil' => htmlspecialchars($this->input->post('idMerkMobil', TRUE)),
             'noPlat' => htmlspecialchars($this->input->post('noPlat', TRUE)),
             'tahunMobil' => htmlspecialchars($this->input->post('tahunMobil', TRUE)),
-            'ac' => htmlspecialchars($this->input->post('ac', TRUE)),
             'jumlahKursi' => htmlspecialchars($this->input->post('jumlahKursi', TRUE)),
             'warnaMobil' => htmlspecialchars($this->input->post('warnaMobil', TRUE)),
             'hargaSewa' => htmlspecialchars($this->input->post('hargaSewa', TRUE)),
+            'dendaMobil' => htmlspecialchars($this->input->post('dendaMobil', TRUE)),
             'isActive' => htmlspecialchars($this->input->post('isActive', TRUE)),
-            'driver' => '0',
-            'keyCar' => '0',
-            'foto' => $foto
+            'fotoMobil' => $fotoMobil
         ];
         $this->db->insert($this->namaTable, $object);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Data Mobil Berhasil Disimpan</div>');
@@ -69,11 +67,9 @@ class Mobil_m extends CI_Model
                 'noPlat' => htmlspecialchars($this->input->post('noPlat', TRUE)),
                 'tahunMobil' => htmlspecialchars($this->input->post('tahunMobil', TRUE)),
                 'jumlahKursi' => htmlspecialchars($this->input->post('jumlahKursi', TRUE)),
-                'ac' => htmlspecialchars($this->input->post('ac', TRUE)),
                 'warnaMobil' => htmlspecialchars($this->input->post('warnaMobil', TRUE)),
                 'isActive' => htmlspecialchars($this->input->post('isActive', TRUE)),
-                'driver' => htmlspecialchars($this->input->post('driver', TRUE)),
-                'keyCar' => htmlspecialchars($this->input->post('keyCar', TRUE)),
+                'dendaMobil' => htmlspecialchars($this->input->post('dendaMobil', TRUE)),
                 'hargaSewa' => htmlspecialchars($this->input->post('hargaSewa', TRUE))
             ];
         } else {
@@ -84,12 +80,10 @@ class Mobil_m extends CI_Model
                 'noPlat' => htmlspecialchars($this->input->post('noPlat', TRUE)),
                 'tahunMobil' => htmlspecialchars($this->input->post('tahunMobil', TRUE)),
                 'jumlahKursi' => htmlspecialchars($this->input->post('jumlahKursi', TRUE)),
-                'ac' => htmlspecialchars($this->input->post('ac', TRUE)),
                 'warnaMobil' => htmlspecialchars($this->input->post('warnaMobil', TRUE)),
                 'hargaSewa' => htmlspecialchars($this->input->post('hargaSewa', TRUE)),
+                'dendaMobil' => htmlspecialchars($this->input->post('dendaMobil', TRUE)),
                 'isActive' => htmlspecialchars($this->input->post('isActive', TRUE)),
-                'driver' => htmlspecialchars($this->input->post('driver', TRUE)),
-                'keyCar' => htmlspecialchars($this->input->post('keyCar', TRUE)),
                 'fotoMobil' => $fotoMobil,
 
             ];

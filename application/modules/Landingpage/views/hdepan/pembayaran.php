@@ -41,10 +41,16 @@ $no = '1';
                                         <a href="<?= base_url($linkin . '/invoice/' . $data->idTransaksi) ?>" class="btn btn-info btn-sm" data-toggle="tooltip">Klik untuk Bayar</a>
                                     </td> -->
                                     <td>
-                                        <?php if ($data->statusTransaksi == 0) {
-                                            echo '<a href="' . base_url($linkin . '/invoice/' . $data->idTransaksi) . '" class="btn btn-info btn-sm" data-toggle="tooltip">Klik untuk Bayar</a>';
+                                        <?php
+                                        if ($data->statusTransaksi == 0) {
+                                            echo
+                                            '<a href="' . base_url($linkin . '/invoice/' . $data->idTransaksi) . '" class="btn btn-info btn-sm" data-toggle="tooltip">Klik untuk Bayar</a>';
+                                        } else if ($data->statusTransaksi == 1) {
+                                            echo
+                                            '<a href="#" class="btn btn-warning btn-sm" data-toggle="tooltip">Menunggu Konfirmasi</a>';
                                         } else {
-                                            echo '<a href="#" class="btn btn-warning btn-sm" data-toggle="tooltip">Menunggu Konfirmasi</a>';
+                                            echo
+                                            '<a href="#" class="btn btn-primary btn-sm" data-toggle="tooltip">Transaksi Selesai</a>';;
                                         }
                                         ?>
                                     </td>

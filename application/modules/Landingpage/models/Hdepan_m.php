@@ -39,10 +39,10 @@ class Hdepan_m extends CI_Model
 
     function getDataTransaksi()
     {
-        // $this->db->where('idPelanggan', $idPelanggan);
+        $this->db->where('Transaksi.idPelanggan', $this->session->userdata('idPelanggan'));
+        $this->db->join('pelanggan', 'pelanggan.idPelanggan = transaksi.idPelanggan', 'left');
         $this->db->join('mobil', 'mobil.idMobil = transaksi.idMobil', 'left');
         $this->db->join('merk', 'merk.idMerkMObil = mobil.idMerkMObil', 'left');
-        $this->db->join('pelanggan', 'pelanggan.idPelanggan = transaksi.idPelanggan', 'left');
         
         return $this->db->get('transaksi')->result();
     }

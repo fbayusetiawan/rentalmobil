@@ -16,7 +16,7 @@ $no = '1';
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <img src="<?= base_url('upload/' . $row->foto) ?>" width="400" class="mb-5" alt="">
+                <img src="<?= base_url('upload/' . $row->fotoMobil) ?>" width="400" class="mb-5" alt="">
                 <table width="100%">
                     <tr>
                         <th width="25%">No Plat Mobil</th>
@@ -43,12 +43,12 @@ $no = '1';
                         <th>: <?= $row->warnaMobil ?></th>
                     </tr>
                     <tr>
-                        <th>Fasilitas AC</th>
-                        <th>: <?= fd_ac($row->ac) ?></th>
-                    </tr>
-                    <tr>
                         <th>Harga Sewa</th>
                         <th>: Rp.<?= number_format(floatval($row->hargaSewa), 0, ',', '.')  ?></th>
+                    </tr>
+                    <tr>
+                        <th>Harga Denda Mobil</th>
+                        <th>: Rp.<?= number_format(floatval($row->dendaMobil), 0, ',', '.')  ?></th>
                     </tr>
                     
                 </table>
