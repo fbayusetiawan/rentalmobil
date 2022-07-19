@@ -68,20 +68,23 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
                             Harus diisi!
                         </div>
                     </div>
-                    <!-- <div class="form-group mb-3">
-                        <label for="validationCustom01">Username <small id="info"></small> </label>
-                        <input type="text" class="form-control" value="<?= $row->username ?>" onkeyup="cekUser()" id="username" minlength="6" name="username" required>
+                    <div class="form-group mb-3">
+                        <label for="validationCustom01">Harga Supir </label>
+                        <input type="text" class="form-control" name="hargaSupir" value="<?= $row->hargaSupir ?>" required>
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
                     </div>
                     <div class="form-group mb-3">
-                        <label for="validationCustom01">Password </label>
-                        <input type="password" class="form-control" name="password" required>
+                        <label for="validationCustom01">Status </label>
+                        <select class="form-control" name="isActive" id="">
+                            <option value="0">Tersedia</option>
+                            <option value="1">Sibuk</option>
+                        </select>
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
-                    </div> -->
+                    </div>
                     <div class="form-group mb-3">
                         <label for="validationCustom01">Foto </label>
                         <input type="file" class="form-control" name="foto">

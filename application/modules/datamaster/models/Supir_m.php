@@ -31,10 +31,11 @@ class Supir_m extends CI_Model
             'tempatLahir' => htmlspecialchars($this->input->post('tempatLahir', TRUE)),
             'noWa' => htmlspecialchars(str_replace('-', '', $this->input->post('noWa', TRUE))),
             'alamat' => htmlspecialchars($this->input->post('alamat', TRUE)),
+            'hargaSupir' => htmlspecialchars($this->input->post('hargaSupir', TRUE)),
             // 'username' => htmlspecialchars($this->input->post('username', TRUE)),
             // 'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
             'roleId' => '3',
-            'isActive' => '1',
+            'isActive' => '0',
             'foto' => $foto,
             'helpNumber' => noOtomatis('helpNumber', 'helpNumber', 'pegawai')
         ];
@@ -55,7 +56,8 @@ class Supir_m extends CI_Model
                 'tempatLahir' => htmlspecialchars($this->input->post('tempatLahir', TRUE)),
                 'noWa' => htmlspecialchars(str_replace('-', '', $this->input->post('noWa', TRUE))),
                 'alamat' => htmlspecialchars($this->input->post('alamat', TRUE)),
-                // 'username' => htmlspecialchars($this->input->post('username', TRUE)),
+                'hargaSupir' => htmlspecialchars($this->input->post('hargaSupir', TRUE)),
+                'isActive' => htmlspecialchars($this->input->post('isActive', TRUE)),
                 // 'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
             ];
           }  else {
@@ -68,7 +70,8 @@ class Supir_m extends CI_Model
                 'tempatLahir' => htmlspecialchars($this->input->post('tempatLahir', TRUE)),
                 'noWa' => htmlspecialchars(str_replace('-', '', $this->input->post('noWa', TRUE))),
                 'alamat' => htmlspecialchars($this->input->post('alamat', TRUE)),
-                // 'username' => htmlspecialchars($this->input->post('username', TRUE)),
+                'hargaSupir' => htmlspecialchars($this->input->post('hargaSupir', TRUE)),
+                'isActive' => htmlspecialchars($this->input->post('isActive', TRUE)),
                 // 'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
                 'foto' => $foto,
 

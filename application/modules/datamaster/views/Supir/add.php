@@ -70,20 +70,13 @@ $id = uniqid()
                             Harus diisi!
                         </div>
                     </div>
-                    <!-- <div class="form-group mb-3">
-                        <label for="validationCustom01">Username <small id="info"></small> </label>
-                        <input type="text" class="form-control" onkeyup="cekUser()" id="username" minlength="6" name="username" required>
+                    <div class="form-group mb-3">
+                        <label for="validationCustom01">Harga Supir</label>
+                        <input type="text" class="form-control" name="hargaSupir" required>
                         <div class="invalid-feedback">
                             Harus diisi!
                         </div>
                     </div>
-                    <div class="form-group mb-3">
-                        <label for="validationCustom01">Password </label>
-                        <input type="text" class="form-control" name="password" required>
-                        <div class="invalid-feedback">
-                            Harus diisi!
-                        </div>
-                    </div> -->
                     <div class="form-group mb-3">
                         <label for="validationCustom01">Foto </label>
                         <input type="file" class="form-control" name="foto" required>
