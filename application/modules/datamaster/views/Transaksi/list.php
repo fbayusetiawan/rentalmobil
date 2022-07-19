@@ -52,7 +52,7 @@ $no = '1';
                                 </td>
                                 <td width="100" class="text-center">
                                     <div class="btn-group mb-0">
-                                        <a href="<?= base_url($linkin . '/edit/' . $row->idTransaksi) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="Edit"><i class="uil uil-edit"></i></a>
+                                        <!-- <a href="<?= base_url($linkin . '/edit/' . $row->idTransaksi) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="Edit"><i class="uil uil-edit"></i></a> -->
                                         <a href="<?= base_url($linkin . '/detail/' . $row->idTransaksi) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="detail"><i class="uil uil-eye"></i></a>
                                         <a href="<?= base_url($linkin . '/delete/' . $row->idTransaksi) ?>" id="<?= $row->namaPelanggan ?>" class="delete-data btn btn-info btn-sm" data-toggle="tooltip" title="Hapus"><i class="uil uil-trash-alt"></i></a>
                                     </div>
