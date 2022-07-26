@@ -49,6 +49,12 @@ class Laporan extends CI_Controller
         $data['data'] = $this->primaryModel->jaminan();
         $this->load->view('laporan/jaminan', $data);
     }
+
+    function bbm()
+    {
+        $data['data'] = $this->primaryModel->bbm();
+        $this->load->view('laporan/bbm', $data);
+    }
 }
 
 /* End of file Laporan.php */

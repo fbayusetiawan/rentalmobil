@@ -48,6 +48,14 @@ class Laporan_m extends CI_Model
         return $this->db->get('jaminan')->result();
     }
 
+    function bbm()
+    {
+        $this->db->join('pegawai', 'pegawai.idPegawai = bbm.idPegawai', 'left');
+        $this->db->join('mobil', 'mobil.idMobil = bbm.idMobil', 'left');
+        $this->db->join('merk', 'merk.idMerkMobil = mobil.idMerkMobil', 'left');
+        return $this->db->get('bbm')->result();
+    }
+
 }
 
 /* End of file Laporan_m.php */

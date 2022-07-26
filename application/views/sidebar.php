@@ -188,6 +188,9 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                         <li>
                             <a href="<?= base_url('laporan/jaminan') ?>" target="_blank">Data Jaminan</a>
                         </li>
+                        <li>
+                            <a href="<?= base_url('laporan/bbm') ?>" target="_blank">Data Penggunaan BBM</a>
+                        </li>
                     </ul>
                 </li>
             </ul>
