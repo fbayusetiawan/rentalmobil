@@ -54,7 +54,7 @@ $now = date('Y-m-d');
                             <tr>
                                 <td align="center"><?= $no++ ?></td>
                                 <td>
-                                    <img src="<?= base_url('upload/' . $row->foto) ?>" width="100px" alt="">
+                                    <img src="<?= base_url('upload/' . $row->fotoMobil) ?>" width="100px" alt="">
                                 </td>
                                 <td style="text-align:center; width: 100;"><?= $row->namaMobil ?></td>
                                 <td style="text-align:center; width: 100;"><?= $row->tahunMobil ?></td>
