@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Jul 2022 pada 07.52
--- Versi server: 10.4.22-MariaDB
--- Versi PHP: 7.4.27
+-- Generation Time: Jul 26, 2022 at 03:05 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `hubungi`
+-- Table structure for table `bbm`
+--
+
+CREATE TABLE `bbm` (
+  `idBbm` varchar(20) NOT NULL,
+  `idPegawai` varchar(20) NOT NULL,
+  `idMobil` varchar(20) NOT NULL,
+  `biayaBbm` varchar(128) NOT NULL,
+  `jenisBbm` varchar(50) NOT NULL,
+  `tanggalBbm` date NOT NULL,
+  `fotoBbm` text NOT NULL,
+  `tujuanBbm` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `bbm`
+--
+
+INSERT INTO `bbm` (`idBbm`, `idPegawai`, `idMobil`, `biayaBbm`, `jenisBbm`, `tanggalBbm`, `fotoBbm`, `tujuanBbm`) VALUES
+('62df38c634a35', '62d62d2fac055', '62b2b93a93ff1', '20000', 'Pertalite', '2022-07-26', '1.jpg', 'Medan'),
+('62df3a00e88a6', '62d62da4e2cd2', '62d620416a2c4', '500000', 'Pertamax Turbo', '2022-07-26', '075756800_1429344595-sasuke-1borutocapture15.jpg', 'Jakarta');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hubungi`
 --
 
 CREATE TABLE `hubungi` (
@@ -35,7 +60,7 @@ CREATE TABLE `hubungi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `hubungi`
+-- Dumping data for table `hubungi`
 --
 
 INSERT INTO `hubungi` (`idHubungi`, `namaLengkap`, `email`, `isi`) VALUES
@@ -44,7 +69,7 @@ INSERT INTO `hubungi` (`idHubungi`, `namaLengkap`, `email`, `isi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jaminan`
+-- Table structure for table `jaminan`
 --
 
 CREATE TABLE `jaminan` (
@@ -55,7 +80,7 @@ CREATE TABLE `jaminan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `jaminan`
+-- Dumping data for table `jaminan`
 --
 
 INSERT INTO `jaminan` (`idJaminan`, `idPelanggan`, `namaJaminan`, `fotoJaminan`) VALUES
@@ -71,7 +96,7 @@ INSERT INTO `jaminan` (`idJaminan`, `idPelanggan`, `namaJaminan`, `fotoJaminan`)
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `merk`
+-- Table structure for table `merk`
 --
 
 CREATE TABLE `merk` (
@@ -80,7 +105,7 @@ CREATE TABLE `merk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `merk`
+-- Dumping data for table `merk`
 --
 
 INSERT INTO `merk` (`idMerkMobil`, `namaMerk`) VALUES
@@ -96,7 +121,7 @@ INSERT INTO `merk` (`idMerkMobil`, `namaMerk`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mobil`
+-- Table structure for table `mobil`
 --
 
 CREATE TABLE `mobil` (
@@ -114,7 +139,7 @@ CREATE TABLE `mobil` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `mobil`
+-- Dumping data for table `mobil`
 --
 
 INSERT INTO `mobil` (`idMobil`, `namaMobil`, `idMerkMobil`, `noPlat`, `tahunMobil`, `jumlahKursi`, `fotoMobil`, `warnaMobil`, `hargaSewa`, `dendaMobil`, `isActive`) VALUES
@@ -137,7 +162,7 @@ INSERT INTO `mobil` (`idMobil`, `namaMobil`, `idMerkMobil`, `noPlat`, `tahunMobi
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pegawai`
+-- Table structure for table `pegawai`
 --
 
 CREATE TABLE `pegawai` (
@@ -157,7 +182,7 @@ CREATE TABLE `pegawai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `pegawai`
+-- Dumping data for table `pegawai`
 --
 
 INSERT INTO `pegawai` (`idPegawai`, `namaPegawai`, `noIndukKepegawaian`, `jk`, `tanggalLahir`, `tempatLahir`, `noWa`, `alamat`, `roleId`, `isActive`, `foto`, `helpNumber`, `hargaSupir`) VALUES
@@ -173,7 +198,7 @@ INSERT INTO `pegawai` (`idPegawai`, `namaPegawai`, `noIndukKepegawaian`, `jk`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pelanggan`
+-- Table structure for table `pelanggan`
 --
 
 CREATE TABLE `pelanggan` (
@@ -195,7 +220,7 @@ CREATE TABLE `pelanggan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `pelanggan`
+-- Dumping data for table `pelanggan`
 --
 
 INSERT INTO `pelanggan` (`idPelanggan`, `username`, `password`, `keyPas`, `noKtp`, `namaPelanggan`, `jk`, `alamat`, `domisili`, `noTelp`, `dateCreated`, `roleId`, `isActive`, `fotoKtp`, `fotoSim`) VALUES
@@ -211,7 +236,7 @@ INSERT INTO `pelanggan` (`idPelanggan`, `username`, `password`, `keyPas`, `noKtp
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `service`
+-- Table structure for table `service`
 --
 
 CREATE TABLE `service` (
@@ -224,7 +249,7 @@ CREATE TABLE `service` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `service`
+-- Dumping data for table `service`
 --
 
 INSERT INTO `service` (`idService`, `idMobil`, `keterangan`, `tanggalService`, `biayaService`, `status`) VALUES
@@ -240,7 +265,7 @@ INSERT INTO `service` (`idService`, `idMobil`, `keterangan`, `tanggalService`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `transaksi`
+-- Table structure for table `transaksi`
 --
 
 CREATE TABLE `transaksi` (
@@ -258,7 +283,7 @@ CREATE TABLE `transaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `transaksi`
+-- Dumping data for table `transaksi`
 --
 
 INSERT INTO `transaksi` (`idTransaksi`, `idMobil`, `idPegawai`, `idPelanggan`, `tanggalPinjam`, `tanggalKembali`, `tanggalSelesai`, `harga`, `totalHarga`, `fotoTransaksi`, `statusTransaksi`) VALUES
@@ -268,7 +293,7 @@ INSERT INTO `transaksi` (`idTransaksi`, `idMobil`, `idPegawai`, `idPelanggan`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -285,7 +310,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`idUsers`, `username`, `password`, `roleId`, `namaLengkap`, `email`, `noWa`, `isActive`, `foto`, `dateCreated`) VALUES
@@ -297,51 +322,57 @@ INSERT INTO `user` (`idUsers`, `username`, `password`, `roleId`, `namaLengkap`, 
 --
 
 --
--- Indeks untuk tabel `hubungi`
+-- Indexes for table `bbm`
+--
+ALTER TABLE `bbm`
+  ADD PRIMARY KEY (`idBbm`);
+
+--
+-- Indexes for table `hubungi`
 --
 ALTER TABLE `hubungi`
   ADD PRIMARY KEY (`idHubungi`);
 
 --
--- Indeks untuk tabel `jaminan`
+-- Indexes for table `jaminan`
 --
 ALTER TABLE `jaminan`
   ADD PRIMARY KEY (`idJaminan`);
 
 --
--- Indeks untuk tabel `merk`
+-- Indexes for table `merk`
 --
 ALTER TABLE `merk`
   ADD PRIMARY KEY (`idMerkMobil`);
 
 --
--- Indeks untuk tabel `mobil`
+-- Indexes for table `mobil`
 --
 ALTER TABLE `mobil`
   ADD PRIMARY KEY (`idMobil`),
   ADD KEY `idMerkMobil` (`idMerkMobil`);
 
 --
--- Indeks untuk tabel `pegawai`
+-- Indexes for table `pegawai`
 --
 ALTER TABLE `pegawai`
   ADD PRIMARY KEY (`idPegawai`);
 
 --
--- Indeks untuk tabel `pelanggan`
+-- Indexes for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
   ADD PRIMARY KEY (`idPelanggan`);
 
 --
--- Indeks untuk tabel `service`
+-- Indexes for table `service`
 --
 ALTER TABLE `service`
   ADD PRIMARY KEY (`idService`),
   ADD KEY `idMobil` (`idMobil`);
 
 --
--- Indeks untuk tabel `transaksi`
+-- Indexes for table `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`idTransaksi`),
@@ -350,57 +381,57 @@ ALTER TABLE `transaksi`
   ADD KEY `idPegawai` (`idPegawai`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`idUsers`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `hubungi`
+-- AUTO_INCREMENT for table `hubungi`
 --
 ALTER TABLE `hubungi`
   MODIFY `idHubungi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `jaminan`
+-- AUTO_INCREMENT for table `jaminan`
 --
 ALTER TABLE `jaminan`
   MODIFY `idJaminan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT untuk tabel `merk`
+-- AUTO_INCREMENT for table `merk`
 --
 ALTER TABLE `merk`
   MODIFY `idMerkMobil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `service`
+-- AUTO_INCREMENT for table `service`
 --
 ALTER TABLE `service`
   MODIFY `idService` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `mobil`
+-- Constraints for table `mobil`
 --
 ALTER TABLE `mobil`
   ADD CONSTRAINT `mobil_ibfk_1` FOREIGN KEY (`idMerkMobil`) REFERENCES `merk` (`idMerkMobil`);
 
 --
--- Ketidakleluasaan untuk tabel `service`
+-- Constraints for table `service`
 --
 ALTER TABLE `service`
   ADD CONSTRAINT `service_ibfk_1` FOREIGN KEY (`idMobil`) REFERENCES `mobil` (`idMobil`);
 
 --
--- Ketidakleluasaan untuk tabel `transaksi`
+-- Constraints for table `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD CONSTRAINT `transaksi_ibfk_1` FOREIGN KEY (`idPelanggan`) REFERENCES `pelanggan` (`idPelanggan`),

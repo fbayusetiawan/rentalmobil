@@ -81,6 +81,12 @@ $hasilTgl = date('Y-m-d', $kurangTgl);
                             <span> Jaminan </span>
                         </a>
                     </li>
+                    <li>
+                        <a href="<?= base_url('Admin/Bbm') ?>">
+                            <i data-feather="info"></i>
+                            <span> Penggunaan BBM </span>
+                        </a>
+                    </li>
                     <li class="menu-title">Master Data</li>
                     <li>
                         <a href="javascript: void(0);">

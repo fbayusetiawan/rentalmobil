@@ -204,6 +204,21 @@ function fd_domisili($val = null)
     endif;
 }
 
+function fd_jenisBbm($val = null)
+{
+    $option = [
+        'Pertalite' => 'Pertalite',
+        'Pertamax' => 'Pertamax',
+        'Pertamax Turbo' => 'Pertamax Turbo',
+        'Solar' => 'Solar',
+    ];
+    if (empty($val)) :
+        return $option;
+    else :
+        return $option[$val];
+    endif;
+}
+
 function fd_ac($val = null)
 {
     $option = [
