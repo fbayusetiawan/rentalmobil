@@ -20,26 +20,17 @@ $linkin = $this->uri->segment(1) . '/' . $this->uri->segment(2);
 
                     <div class="form-group mb-3">
                         <label for="validationCustom01">Nama Supir</label>
-                        <select class="form-control" name="idPegawai">
-                            <option value="">--- Pilih Nama Supir ---</option>
-                            <?php foreach ($supir as $s) { ?>
-                                <option value="<?php echo $s->idPegawai; ?>"><?= $s->noIndukKepegawaian ?> - <?= $s->namaPegawai ?> </option>
-                            <?php } ?>
-                        </select>
+                        <?= cmb_dinamis('idPegawai', 'pegawai', 'namaPegawai', 'idPegawai', $selected = $row->idPegawai, '') ?>
                         <div class="invalid-feedback">
-                            Harus diisi!
+                            Harus di isi.
                         </div>
                     </div>
+
                     <div class="form-group mb-3">
                         <label for="validationCustom01">Mobil</label>
-                        <select class="form-control" name="idMobil">
-                            <option value="">--- Pilih Mobil ---</option>
-                            <?php foreach ($mobil as $m) { ?>
-                                <option value="<?php echo $m->idMobil; ?>"><?= $m->namaMerk ?> - <?= $m->namaMobil ?> <?= $m->tahunMobil ?> </option>
-                            <?php } ?>
-                        </select>
+                        <?= cmb_dinamis('idMobil', 'mobil', 'namaMobil', 'idMobil', $selected = $row->idMobil, '') ?>
                         <div class="invalid-feedback">
-                            Harus diisi!
+                            Harus di isi.
                         </div>
                     </div>
                     <div class="form-group mb-3">

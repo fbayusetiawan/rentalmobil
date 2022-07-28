@@ -47,6 +47,8 @@ class Bbm extends CI_Controller
     {
         $data['title'] = $this->titles;
         $data['pageTitle'] = "Edit Data " . $this->titles;
+        $data['mobil'] = $this->primaryModel->getAllMobil();
+        $data['supir'] = $this->primaryModel->getSupir();
         $id = $this->uri->segment(4);
         $data['row'] = $this->primaryModel->getDataById($id);
         $this->template->load('template', $this->vn . '/edit', $data);

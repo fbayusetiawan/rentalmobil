@@ -43,7 +43,7 @@ $no = '1';
                                 <td style="width: 100;">Rp.<?= number_format(floatval($row->biayaBbm), 0, ',', '.')  ?></td>
                                 <td style="width: 100;"><?= tgl_indo($row->tanggalBbm) ?></td>
                                 <td style="width: 100;"><?= $row->tujuanBbm ?></td>
-                                <td style="width: 100;"><a href="<?= base_url('upload/' . $row->fotoBbm) ?>">Klik Untuk Melihat</a></td>
+                                <td style="width: 100;"><a href="#m_buktitf" data-toggle="modal">Klik Untuk Melihat</a></td>
                                 <td class="text-center">
                                     <div class="btn-group mb-0">
                                         <a href="<?= base_url($linkin . '/edit/' . $row->idBbm) ?>" class="btn btn-info btn-sm" data-toggle="tooltip" title="edit"><i class="uil uil-edit"></i></a>
@@ -60,3 +60,25 @@ $no = '1';
     </div><!-- end col-->
 </div>
 <!-- end row-->
+<!-- Modal -->
+<div class="modal fade" id="m_buktitf" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Foto Bukti Transfer</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="<?= base_url('laporan/pelanggan') ?>" method="post" target="_blank">
+                    <img src="<?= base_url('upload/' . $row->fotoBbm) ?>" class="mx-auto" width="250" alt="">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <!-- <button type="submit" class="btn btn-primary">Print</button> -->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
